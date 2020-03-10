@@ -27,6 +27,6 @@ button{
 	cursor:pointer;
 	color:white;
 	width:75px;
+    font-size: 15px;
 	height:50px;
-	font-size: 15px
 }
