@@ -1,0 +1,17 @@
+h1{
+	text-align:center;
+	font-size:75px;
+	font-family:monospace
+}
+
+img{
+	border-radius: 50%;
+	margin:auto;
+	display: block
+}
+
+p{
+	text-align:center;
+	font-size:30px;
+    font-family:monospace
+}
