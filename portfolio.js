@@ -41,5 +41,5 @@ function pkm (users_choice)
 function pkm2() {
 	var choice = prompt('Rock, paper, scissors?');
 
-	pkm(choice);
+	pkm(choice.toLowerCase());
 }
