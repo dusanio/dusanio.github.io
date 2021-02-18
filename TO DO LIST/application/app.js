@@ -5,11 +5,12 @@ const clear = document.querySelector(".clear");
 const dateElement = document.getElementById("date");
 const list = document.getElementById("list");
 const input = document.getElementById("input");
-
+const addbutton = document.querySelector(".add-to-do-button");
 // Classes names
 const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
+
 
 // Variables
 let LIST, id;
@@ -27,6 +28,30 @@ if(data){
     LIST = [];
     id = 0;
 }
+console.log(addbutton);
+addbutton.addEventListener("onclick", function(){
+    
+    const toDo = input.value;
+        
+    // if the input isn't empty
+    if(toDo){
+        addToDo(toDo, id, false, false);
+        
+        LIST.push({
+            name : toDo,
+            id : id,
+            done : false,
+            trash : false
+        });
+        
+        // add item to localstorage ( this code must be added where the LIST array is updated)
+        localStorage.setItem("TODO", JSON.stringify(LIST));
+        
+        id++;
+    }
+    input.value = "";
+
+})
 
 // load items to the user's interface
 function loadList(array){
