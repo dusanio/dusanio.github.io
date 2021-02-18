@@ -92,10 +92,9 @@ body{
     color:#6eb200;
 }
 .btn {
-    background-color: DodgerBlue; /* Blue background */
+    background-color: #fff;
     border: none; /* Remove borders */
     color: white; /* White text */
-    padding: 12px 16px; /* Some padding */
     font-size: 16px; /* Set a font size */
     cursor: pointer; /* Mouse pointer on hover */
   }
@@ -127,14 +126,10 @@ body{
 /* ------------ add item ------------ */
 .add-to-do{
     position: relative;
-    width: 360px;
-    height:40px;
     background-color: #FFF;
-    padding: 10px;
     border-top: 1px solid rgba(0,0,0,0.1);
 }
 .add-to-do i{
-    position: absolute;
     font-size: 40px;
     color: #4162f6;
 }
