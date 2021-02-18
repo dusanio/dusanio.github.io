@@ -5,10 +5,10 @@ body{
     font-family: 'Titillium Web', sans-serif;
 }
 
-p{
-    text-align:center;
-	font-size:30px;
-    font-family:monospace
+.pasus{
+    text-align: center;
+	font-size: 30px;
+    font-family: monospace
 }
 
 /* ------------ container ------------ */
