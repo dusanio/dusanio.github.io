@@ -1,3 +1,3 @@
 # Dusan-ai.github.io
 
-wassup?
+Starting project
