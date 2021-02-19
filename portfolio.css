@@ -3,9 +3,6 @@ body {
 	font-family: courier, monospace;
 	color: #fff;
 	font-size: 14px;
-	margin-top: 30px;
-	margin-left: 25%;
-	margin-right: 25%;
 	background-color: #000;
 }
 
@@ -21,9 +18,21 @@ span {
 }
 
 img {
+	padding: 30px;
 	border-radius: 50%;
 	margin: auto;
 	display: block
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+canvas{
+	display: block;
+	z-index: -1;
+	position: fixed;
 }
 
 .hidden {
