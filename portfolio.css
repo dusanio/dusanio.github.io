@@ -1,32 +1,33 @@
-h1{
-	text-align:center;
-	font-size:75px;
-	font-family:monospace
+
+body {
+	font-family: courier, monospace;
+	color: #fff;
+	font-size: 14px;
+	margin-top: 30px;
+	margin-left: 25%;
+	margin-right: 25%;
+	background-color: #000;
 }
 
-img{
+a:link,
+a:visited {
+	color: red;
+}
+
+span {
+	text-align: center;
+	display: block;
+	white-space: pre-wrap;
+}
+
+img {
 	border-radius: 50%;
-	margin:auto;
+	margin: auto;
 	display: block
 }
 
-p{
-	text-align:center;
-	font-size:30px;
-    font-family:monospace
+.hidden {
+	display: none;
 }
 
-.centriraj{
-    text-align:center;
-	font-size:20px
-}
 
-button{
-	background-color:rgb(36, 137, 196);
-	border-radius:5px;
-	cursor:pointer;
-	color:white;
-	width:75px;
-    font-size: 15px;
-	height:50px;
-}
