@@ -1433,6 +1433,7 @@
 }
 .fa-recycle:before {
   content: "\f1b8";
+  color:#333;
 }
 .fa-automobile:before,
 .fa-car:before {

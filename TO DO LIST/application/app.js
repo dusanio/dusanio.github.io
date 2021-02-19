@@ -82,7 +82,7 @@ function addToDo(toDo, id, done, trash){
     const item = `<li class="item">
                     <i class="fa ${DONE} co" job="complete" id="${id}"></i>
                     <p class="text ${LINE}">${toDo}</p>
-                    <i class="fa fa-trash-o de" job="delete" id="${id}"></i>
+                    <i class="fa fa-trash de" job="delete" id="${id}"></i>
                   </li>
                 `;
     
