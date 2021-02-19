@@ -15,7 +15,7 @@ const sleep = (ms) => {
 
     for (const char of line) {
       lineEl.textContent += char;
-      await sleep(50);
+      await sleep(55);
     }
 
     lineEl.innerHTML = lineHTML;
