@@ -111,10 +111,10 @@ canvas{
 }
 .button{
     position: absolute;
-    border: 1px solid #fff;
-	background: none;
+    border: 1px solid #4162f6;;
+	background: #fff;
 	padding: 10px;
-	font-size: 30px;
+	font-size: 27px;
 	cursor: pointer;
 	margin:0;
     left: 50%;
@@ -124,7 +124,7 @@ canvas{
 	transition: 0.8s;
 	overflow: hidden;
 	font-family: 'Titillium Web', sans-serif;
-    color: #fff;
+    color: #4162f6;
 }
 .button::before{
 	content: "";
@@ -132,12 +132,13 @@ canvas{
 	left: 0;
 	width: 100%;
 	height: 0%;
-	background: green;
+	background: #4162f6;
 	z-index: -1;
 	transition: 0.8s;
 	overflow: hidden;
 }
 .button:hover{
+    border: 1px solid #fff;
 	color: #fff;;
 }
 .button:hover::before{
