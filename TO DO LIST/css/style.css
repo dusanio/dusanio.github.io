@@ -110,6 +110,7 @@ canvas{
 .button{
     position: relative;
     top: 50%;
+    margin-top: 40px;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);  
     border: 1px solid #fff;
