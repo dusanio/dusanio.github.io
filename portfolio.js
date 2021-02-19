@@ -35,7 +35,7 @@ function pkm (users_choice)
 	} else {
 		alert ("Invalid input.");
 	}
-	alert ("You chose " + users_choice + ", while computer chose " + computers_choice +  "\n" +  result);
+	alert ("You chose " + users_choice + ", while computer has chosen " + computers_choice + "." + "\n" +  result);
 
 }
 
