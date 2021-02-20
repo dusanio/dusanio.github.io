@@ -18,7 +18,7 @@ var c = document.getElementById("c");
         
         function draw()
         {
-            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
             ctx.fillRect(0, 0, c.width, c.height);
 
             ctx.fillStyle = "rgba(11,156,49,1)";
