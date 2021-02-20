@@ -8,7 +8,7 @@ var c = document.getElementById("c");
         
         matrix = matrix.split("");
 
-        var font_size = 10;
+        var font_size = 8;
         var columns = c.width/font_size; 
         var drops = [];
         
