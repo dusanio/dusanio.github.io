@@ -3,6 +3,7 @@ body {
   background-color: #313b47;
   text-decoration: none;
   height: 650px;
+  cursor: default;
 }
 a {
   text-decoration: none;
