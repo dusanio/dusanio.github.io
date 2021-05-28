@@ -30,6 +30,9 @@ img {
 .inside {
   font-size: 18px;
 }
+#about-me {
+  white-space: normal;
+}
 
 #list:hover,
 #firefox:hover,
