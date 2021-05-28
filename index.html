@@ -1,60 +1,97 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <link rel="stylesheet" href="main.css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon32.png" />
     <script src="portfolio.js"></script>
-</head>
-<title>CV 2021</title>
-<body>
-
-<div id="main_div">
-    <div id="top_div">
-    <img src="me_cv.PNG" />
-    <div id = "img"> 
-        <h1> Dušan Trajković </h1>
-        <h3> Web Developer </h3>
-        <h5> Living in Serbia </h5>
-    </div>
-    </div>
-    <div id="mail_phone">
-        <br>
-        <b id = "phone_mail"><i class="fa fa-envelope-o"></i> dusantrajkovic1510@gmail.com </b>
-    </div>
-    <div id="fill1">
+  </head>
+  <title>Dušan's Profile</title>
+  <body>
+    <div id="main_div">
+      <div id="top_div">
+        <img src="me_cv.PNG" />
+        <div id="img">
+          <h1>Dušan Trajković</h1>
+          <h3>Front-End Web Developer</h3>
+          <h5>Living in Serbia</h5>
+        </div>
+      </div>
+      <div id="mail_phone">
+        <br />
+        <b id="phone_mail"
+          ><i class="fa fa-envelope-o"></i> dusantrajkovic1510@gmail.com
+        </b>
+      </div>
+      <div id="fill1">
         <p id="work"><b>PROJECTS</b></p>
-        <p class = "inside"> 
-            <b><a href="to_do_list/todolist.html" target="_blank">An easy to use To Do List with memory saving.</a></b>
-            <br>
-            <b><a href="javascript:pkm2()">A simply made rock, paper, scissors game.</a></b>
-            <br>
-            <b><a href="aquilla/index.html" target="_blank">Aquilla records website I am still working on.</a></b>
-            <br>
-            <b><a href="https://addons.mozilla.org/en-US/firefox/addon/smile_amazon/" target="_blank">Firefox Amazon Smile Redirecting Extension.</a></b>
-            <br>
-            <b><a href="https://chrome.google.com/webstore/detail/amazon-smile-redirecting/pebmknbffjidbpkfhmllajjpgefjpgbi/related?hl=sr&authuser=0" target="_blank">Chrome Amazon Smile Redirecting Extension.</a></b>
+        <p class="inside">
+          <b
+            ><a href="to_do_list/todolist.html" target="_blank" id="list"
+              >An easy to use To Do List with memory saving.</a
+            ></b
+          >
+          <br />
+          <b
+            ><a href="javascript:pkm2()" id="rps"
+              >A simply made rock, paper, scissors game.</a
+            ></b
+          >
+          <br />
+          <b
+            ><a href="aquilla/index.html" target="_blank" id="aquilla"
+              >Aquilla records</a
+            ></b
+          >
+          <br />
+          <b
+            ><a
+              href="https://addons.mozilla.org/en-US/firefox/addon/smile_amazon/"
+              target="_blank"
+              id="firefox"
+              >Firefox Amazon Smile Redirecting Extension.</a
+            ></b
+          >
+          <br />
+          <b
+            ><a
+              href="https://chrome.google.com/webstore/detail/amazon-smile-redirecting/pebmknbffjidbpkfhmllajjpgefjpgbi/related?hl=sr&authuser=0"
+              target="_blank"
+              id="chrome"
+              >Chrome Amazon Smile Redirecting Extension.</a
+            ></b
+          >
+          <br />
+          <b><a href="#" id="discode">DisCode - Currently in progress</a></b>
         </p>
 
         <p id="skills"><b>SKILLS</b></p>
-        <p class = "inside"><b>HTML - 4 years</b></p>
-        <p class = "inside"><b>CSS - 3 years</b></p>
-        <p class = "inside"><b>JavaScript - 5 months</b></p>
-        <p class = "inside"><b>jQuery - 5 months</b></p>
+        <p class="inside" id="skill1"><b>HTML - 4 years</b></p>
+        <p class="inside" id="skill2"><b>CSS - 3 years</b></p>
+        <p class="inside" id="skill3"><b>JavaScript - 5 months</b></p>
+        <p class="inside" id="skill4"><b>jQuery - 5 months</b></p>
+        <p class="inside" id="skill5"><b>React - Currently learning</b></p>
+        <p class="inside" id="skill6"><b>C - Currently learning</b></p>
+      </div>
+      <div id="fill2">
+        <p id="languages"><b>LANGUAGES</b></p>
+        <p class="inside" id="lang1"><b>Serbian - native language</b></p>
+        <p class="inside" id="lang2"><b>English - 8 years</b></p>
+
+        <p id="interests"><b>SHORTLY ABOUT ME</b></p>
+        <p class="inside" id="about-me">
+          <b
+            >Dušan (Dushan) is a Front-End Web Developer since late 2018.
+            Starting with HTML and CSS and upgrading to more complex languages
+            such as JavaScript (and its libraries [React and jQuery]) and C.</b
+          >
+        </p>
+      </div>
     </div>
-    <div id = "fill2">
-        <p id = "languages"><b>LANGUAGES</b></p>
-        <p class = "inside"><b>Serbian - native language</b></p>
-        <p class = "inside"><b>English - 8 years</b></p>
-
-        <p id = "interests"><b>INTERESTS</b></p>
-        <p class = "inside"><b>Web programming</b></p>
-        <p class = "inside"><b>Basketball</b></p>
-    </div>
-    
-</div>
-
-
-</body>
+  </body>
 </html>
