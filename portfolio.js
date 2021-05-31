@@ -39,10 +39,10 @@ function pkm2() {
 }
 
 function rollTheDice() {
-  var dice1 = Math.floor(Math.random() * (6 - 1 + 1) + 1);
-  var dice2 = Math.floor(Math.random() * (6 - 1 + 1) + 1);
-  var dice3 = Math.floor(Math.random() * (6 - 1 + 1) + 1);
-  var dice4 = Math.floor(Math.random() * (6 - 1 + 1) + 1);
+  var dice1 = Math.floor(Math.random() * 6) + 1;
+  var dice2 = Math.floor(Math.random() * 6) + 1;
+  var dice3 = Math.floor(Math.random() * 6) + 1;
+  var dice4 = Math.floor(Math.random() * 6) + 1;
   var users_sum = dice1 + dice2;
   var computers_sum = dice3 + dice4;
   if (users_sum > computers_sum) {
