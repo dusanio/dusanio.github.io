@@ -2,6 +2,7 @@
 
 <html>
   <head>
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -9,6 +10,18 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+      integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY="
+      crossorigin="anonymous"
+    />
     <script src="portfolio.js"></script>
   </head>
   <title>Dušan's Profile</title>
@@ -17,80 +30,79 @@
       <div id="top_div">
         <img src="me_cv.PNG" />
         <div id="img">
-          <h1>Dušan Trajković</h1>
+          <h1>Dušan</h1>
           <h3>Front-End Developer</h3>
           <h5>Living in Serbia</h5>
+          <p id="about-me">
+           <h3> Hello 👋🏻!<br></h3>
+            Dušan (Dushan) is a Front-End Web Developer since late 2018.
+            <br />
+            Starting with HTML and CSS and upgrading to <br />
+            more complex languages such as JavaScript (and its libraries [React
+            and jQuery]) and C.
+          </p>
         </div>
       </div>
-      <div id="mail_phone">
+      <div>
         <br />
         <b id="phone_mail"
-          ><i class="fa fa-envelope-o"></i> dusantrajkovic1510@gmail.com
-        </b>
+          ><a href="mailto:trajkodulic@gmail.com"
+            ><i class="fa fa-envelope-o" id="contact"></i></a
+        ></b>
+        <b
+          ><a href="https://twitter.com/DEVgoldenninja1">
+            <i class="fa fa-twitter" aria-hidden="true" id="contact"></i></a
+        ></b>
+        <b
+          ><a href="https://github.com/dusanio"
+            ><i class="fa fa-github" aria-hidden="true" id="contact"></i></a
+        ></b>
+        <b
+          ><a href="https://discordapp.com/users/305390305191133186"
+            ><i class="fa fa-discord" aria-hidden="true" id="contact"></i></a
+        ></b>
       </div>
-      <div id="fill1">
+      <div id="fill">
         <p id="work"><b>PROJECTS</b></p>
         <p class="inside">
-          <b
-            ><a href="to_do_list/todolist.html" target="_blank" id="list"
-              >An easy to use To Do List with memory saving.</a
-            ></b
+          <a href="to_do_list/todolist.html" target="_blank" id="list"
+            >An easy to use To Do List with memory saving.</a
           >
           <br />
-          <b
-            ><a href="javascript:pkm2()" id="rps"
-              >Rock, Paper, Scissors mini game made in JavaScript.</a
-            ></b
+          <a href="javascript:pkm2()" id="rps"
+            >Rock, Paper, Scissors mini game made in JavaScript.</a
           >
           <br />
-          <b
-            ><a href="javascript:rollTheDice()" id="rtd"
-              >Roll The Dice mini game made in JavaScript.</a
-            ></b
+          <a href="javascript:rollTheDice()" id="rtd"
+            >Roll The Dice mini game made in JavaScript.</a
           >
           <br />
-          <b
-            ><a
-              href="https://addons.mozilla.org/en-US/firefox/addon/smile_amazon/"
-              target="_blank"
-              id="firefox"
-              >Firefox Amazon Smile Redirecting Extension.</a
-            ></b
+          <a
+            href="https://addons.mozilla.org/en-US/firefox/addon/smile_amazon/"
+            target="_blank"
+            id="firefox"
+            >Firefox Amazon Smile Redirecting Extension.</a
+          >
+          <br /><a
+            href="https://chrome.google.com/webstore/detail/amazon-smile-redirecting/pebmknbffjidbpkfhmllajjpgefjpgbi/related?hl=sr&authuser=0"
+            target="_blank"
+            id="chrome"
+            >Chrome Amazon Smile Redirecting Extension.</a
           >
           <br />
-          <b
-            ><a
-              href="https://chrome.google.com/webstore/detail/amazon-smile-redirecting/pebmknbffjidbpkfhmllajjpgefjpgbi/related?hl=sr&authuser=0"
-              target="_blank"
-              id="chrome"
-              >Chrome Amazon Smile Redirecting Extension.</a
-            ></b
-          >
-          <br />
-          <b><a href="#" id="discode">DisCode - Currently in progress</a></b>
+          <a href="#" id="discode">DisCode - Currently in progress</a>
         </p>
 
         <p id="skills"><b>SKILLS</b></p>
-        <p class="inside" id="skill1"><b>HTML</b></p>
-        <p class="inside" id="skill2"><b>CSS</b></p>
-        <p class="inside" id="skill3"><b>JavaScript</b></p>
-        <p class="inside" id="skill4"><b>jQuery</b></p>
-        <p class="inside" id="skill5"><b>React - Currently learning</b></p>
-        <p class="inside" id="skill6"><b>C - Currently learning</b></p>
-      </div>
-      <div id="fill2">
+        <p class="inside" id="skill1">HTML</p>
+        <p class="inside" id="skill2">CSS</p>
+        <p class="inside" id="skill3">JavaScript</p>
+        <p class="inside" id="skill4">jQuery</p>
+        <p class="inside" id="skill5">React - Currently learning</p>
+        <p class="inside" id="skill6">C - Currently learning</p>
         <p id="languages"><b>LANGUAGES</b></p>
-        <p class="inside" id="lang1"><b>Serbian - native language</b></p>
-        <p class="inside" id="lang2"><b>English - 8 years</b></p>
-
-        <p id="interests"><b>SHORTLY ABOUT ME</b></p>
-        <p class="inside" id="about-me">
-          <b
-            >Dušan (Dushan) is a Front-End Web Developer since late 2018.
-            Starting with HTML and CSS and upgrading to more complex languages
-            such as JavaScript (and its libraries [React and jQuery]) and C.</b
-          >
-        </p>
+        <p class="inside" id="lang1">Serbian - native language</p>
+        <p class="inside" id="lang2">English - 8 years</p>
       </div>
     </div>
   </body>
