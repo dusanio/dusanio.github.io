@@ -5,10 +5,12 @@ body {
   text-align: center;
   cursor: default;
 }
+
 a {
   text-decoration: none;
   color: black;
 }
+
 img {
   width: 180px;
   height: 180px;
@@ -20,15 +22,28 @@ img {
 .inside {
   font-size: 18px;
 }
-#contact {
-  font-size: 25px;
-  text-align: center;
-  letter-spacing: 5px;
+
+#where-at {
+  letter-spacing: 3px;
 }
 
-#contact:hover {
-  cursor: pointer;
+#contact-twitter {
   font-size: 30px;
+  text-align: center;
+  color: #6cadde;
+}
+
+#contact-discord {
+  font-size: 28px;
+  text-align: center;
+  color: #738adb;
+}
+
+#contact:hover,
+#contact-discord:hover,
+#contact-twitter:hover {
+  cursor: pointer;
+  font-size: 35px;
 }
 #list:hover,
 #firefox:hover,
@@ -68,6 +83,8 @@ img {
     font-size: 30px;
   }
 
+  #contact-twitter:hover,
+  #contact-discord:hover,
   #contact:hover {
     font-size: 35px;
   }
@@ -93,11 +110,17 @@ img {
     width: 350px;
     height: 350px;
   }
-
+  #contact-twitter,
   #contact {
     font-size: 45px;
   }
 
+  #contact-discord {
+    font-size: 43px;
+  }
+
+  #contact-twitter:hover,
+  #contact-discord:hover,
   #contact:hover {
     font-size: 50px;
   }
