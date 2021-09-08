@@ -19,7 +19,8 @@ function pkm(users_choice) {
   } else if (users_choice == "scissors" && computers_choice == "paper") {
     result = "You won";
   } else {
-    alert("Invalid input.");
+    alert("Uhm... ? Your input is invalid, try again with a different input.");
+    return;
   }
   alert(
     "You chose " +
