@@ -27,8 +27,8 @@ a:hover {
 }
 
 img {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   border-radius: 0% 40% 0% 40%;
   margin-bottom: 2rem;
 }
@@ -107,17 +107,39 @@ img {
   #work,
   #skills,
   #languages {
-    font-size: 25px;
+    font-size: 16px;
+  }
+  .inside {
+    font-size: 13px;
   }
 
-  #contact {
-    font-size: 30px;
+  span {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+  #contact-discord,
+  #contact-github,
+  #contact-twitter,
+  #contact-mail {
+    font-size: 25px;
   }
 
   #contact-twitter:hover,
   #contact-discord:hover,
-  #contact:hover {
-    font-size: 35px;
+  #contact-mail:hover,
+  #contact-github:hover {
+    font-size: 30px;
+  }
+  img {
+    width: 140px;
+    height: 140px;
   }
 }
 
@@ -163,35 +185,5 @@ img {
   }
   #about-me {
     font-size: 30px;
-  }
-}
-
-@media only screen and (max-width: 1440px) {
-  img {
-    width: 200px;
-    height: 200px;
-  }
-
-  h3 {
-    font-size: 20px;
-  }
-
-  #work,
-  #skills,
-  #languages {
-    font-size: 20px;
-  }
-
-  .inside {
-    font-size: 15px;
-  }
-  #about-me {
-    font-size: 15px;
-  }
-  #contact {
-    font-size: 30px;
-  }
-  #contact:hover {
-    font-size: 35px;
   }
 }
