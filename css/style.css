@@ -22,7 +22,7 @@ a {
 }
 
 a:hover {
-  font-size: 16px;
+  font-size: 17px;
   transition: 0.4s;
 }
 
@@ -43,7 +43,7 @@ img {
 }
 
 .inside {
-  font-size: 18px;
+  font-size: 16px;
   margin: 1rem;
 }
 
@@ -88,7 +88,7 @@ img {
 
 #fill {
   text-align: center;
-  font-size: 15px;
+  font-size: 18px;
   padding: 0.5rem;
 }
 
