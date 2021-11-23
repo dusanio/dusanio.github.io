@@ -26,22 +26,11 @@ a:hover {
   transition: 0.4s;
 }
 
-.shape {
-  clip-path: polygon(
-    30% 0%,
-    70% 0%,
-    100% 30%,
-    100% 70%,
-    70% 100%,
-    30% 100%,
-    0% 70%,
-    0% 30%
-  );
-  margin-bottom: 2rem;
+img {
   width: 180px;
   height: 180px;
-  background-image: url("../me_cv.PNG");
-  background-size: cover;
+  border-radius: 0% 40% 0% 40% / 27% 25% 40% 36%;
+  margin-bottom: 2rem;
 }
 
 .svg1 {
