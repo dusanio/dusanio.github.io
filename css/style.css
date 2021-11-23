@@ -29,7 +29,7 @@ a:hover {
 img {
   width: 180px;
   height: 180px;
-  border-radius: 0% 40% 0% 40% / 27% 25% 40% 36%;
+  border-radius: 0% 40% 0% 40%;
   margin-bottom: 2rem;
 }
 
@@ -122,18 +122,8 @@ img {
 }
 
 @media only screen and (min-width: 1920px) and (max-width: 2560) {
-  h1 {
-    font-size: 50px;
-    white-space: nowrap;
-  }
-
   h3 {
     font-size: 35px;
-    white-space: nowrap;
-  }
-
-  h5 {
-    font-size: 30px;
     white-space: nowrap;
   }
 
@@ -181,14 +171,9 @@ img {
     width: 200px;
     height: 200px;
   }
-  h1 {
-    font-size: 30px;
-  }
+
   h3 {
     font-size: 20px;
-  }
-  h5 {
-    font-size: 15px;
   }
 
   #work,
