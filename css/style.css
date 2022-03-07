@@ -82,8 +82,8 @@ img {
 #contact-github:hover,
 #contact-discord:hover,
 #contact-twitter:hover {
-  font-size: 35px;
-  transition: 0.3s;
+  font-size: 33px;
+  transition: 0.4s;
 }
 
 #fill {
@@ -139,7 +139,7 @@ img {
   }
   img {
     width: 140px;
-    height: 180px;
+    height: 140px;
   }
 }
 
