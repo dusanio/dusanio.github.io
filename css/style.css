@@ -5,11 +5,11 @@
 }
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: #111827;
+  background-color: white;
   text-decoration: none;
   text-align: center;
   cursor: default;
-  color: #00cba9;
+  color: black;
 }
 
 h3 {
@@ -18,28 +18,18 @@ h3 {
 
 a {
   text-decoration: none;
-  color: #00cba9;
-}
-
-a:hover {
-  font-size: 17px;
-  transition: 0.4s;
 }
 
 img {
   width: 200px;
   height: 200px;
-  border-radius: 0% 40% 0% 40%;
+  border-radius: 50%;
   margin-bottom: 2rem;
 }
 
-.svg1 {
-  position: relative;
-  top: 0;
-}
-.svg2 {
-  position: relative;
-  bottom: 0;
+#main_div{
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .inside {
@@ -55,24 +45,26 @@ img {
 #contact-twitter {
   font-size: 30px;
   text-align: center;
-  color: #00cba9;
+  color: black;
   margin: 0.5rem;
 }
 
 #contact-discord {
   font-size: 28px;
   text-align: center;
-  color: #00cba9;
+  color: black;
   margin: 0.5rem;
 }
 
 #contact-mail {
+  color: black;
   font-size: 29px;
   text-align: center;
   margin: 0.5rem;
 }
 
 #contact-github {
+  color: black;
   font-size: 30px;
   text-align: center;
   margin: 0.5rem;
@@ -83,7 +75,6 @@ img {
 #contact-discord:hover,
 #contact-twitter:hover {
   font-size: 33px;
-  transition: 0.4s;
 }
 
 #fill {
