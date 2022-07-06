@@ -19,5 +19,8 @@
   "homepage": "https://github.com/dusanio/dusanio.github.io#readme",
   "devDependencies": {
     "tailwindcss": "^3.1.4"
+  },
+  "dependencies": {
+    "daisyui": "^2.18.0"
   }
 }

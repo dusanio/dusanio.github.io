@@ -4,12 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "dark": "#17181c",
-        "redish": "#fa4753",
-        "grayish": "#9ba5c9"
-      }
+        dark: "#17181c",
+        redish: "#fa4753",
+        grayish: "#9ba5c9",
+      },
     },
-    
   },
-  plugins: [],
-}
+  plugins: [require("daisyui")],
+};
