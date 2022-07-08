@@ -8,6 +8,9 @@ module.exports = {
         redish: "#fa4753",
         grayish: "#9ba5c9",
       },
+      fontFamily: {
+        inter: ["inter", "sans-serif"],
+      },
     },
   },
   plugins: [require("daisyui")],
