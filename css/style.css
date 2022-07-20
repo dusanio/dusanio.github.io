@@ -2288,6 +2288,10 @@ html {
   margin-top: 2rem;
 }
 
+.ml-20 {
+  margin-left: 5rem;
+}
+
 .block {
   display: block;
 }
@@ -2444,6 +2448,15 @@ html {
   border-color: rgb(244 114 182 / var(--tw-border-opacity));
 }
 
+.border-green-400\/100 {
+  border-color: rgb(74 222 128 / 1);
+}
+
+.border-green-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(74 222 128 / var(--tw-border-opacity));
+}
+
 .border-x-purple-600 {
   --tw-border-opacity: 1;
   border-left-color: rgb(147 51 234 / var(--tw-border-opacity));
@@ -2496,6 +2509,24 @@ html {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-purple-500 {
+  --tw-gradient-from: #a855f7;
+  --tw-gradient-to: rgb(168 85 247 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-purple-700 {
+  --tw-gradient-from: #7e22ce;
+  --tw-gradient-to: rgb(126 34 206 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-purple-800 {
+  --tw-gradient-from: #6b21a8;
+  --tw-gradient-to: rgb(107 33 168 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .to-green-500 {
   --tw-gradient-to: #22c55e;
 }
@@ -2506,6 +2537,26 @@ html {
 
 .to-purple-600 {
   --tw-gradient-to: #9333ea;
+}
+
+.to-green-400 {
+  --tw-gradient-to: #4ade80;
+}
+
+.to-pink-800 {
+  --tw-gradient-to: #9d174d;
+}
+
+.to-green-300 {
+  --tw-gradient-to: #86efac;
+}
+
+.to-green-600 {
+  --tw-gradient-to: #16a34a;
+}
+
+.to-green-800 {
+  --tw-gradient-to: #166534;
 }
 
 .bg-clip-text {
@@ -2590,6 +2641,11 @@ html {
   color: transparent;
 }
 
+.text-green-400 {
+  --tw-text-opacity: 1;
+  color: rgb(74 222 128 / var(--tw-text-opacity));
+}
+
 .shadow-xl {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
@@ -2619,6 +2675,11 @@ html {
 .hover\:border-pink-600:hover {
   --tw-border-opacity: 1;
   border-color: rgb(219 39 119 / var(--tw-border-opacity));
+}
+
+.hover\:border-green-400:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(74 222 128 / var(--tw-border-opacity));
 }
 
 .hover\:bg-grayish:hover {
@@ -2679,6 +2740,10 @@ html {
 
   .lg\:mb-0 {
     margin-bottom: 0px;
+  }
+
+  .lg\:ml-40 {
+    margin-left: 10rem;
   }
 
   .lg\:inline-block {
