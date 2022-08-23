@@ -21,6 +21,7 @@
     "tailwindcss": "^3.1.4"
   },
   "dependencies": {
-    "daisyui": "^2.18.0"
+    "daisyui": "^2.18.0",
+    "vanilla-tilt": "^1.7.2"
   }
 }
