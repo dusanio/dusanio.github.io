@@ -2194,6 +2194,18 @@ html {
   margin-bottom: 3.5rem;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
+.ml-8 {
+  margin-left: 2rem;
+}
+
 .block {
   display: block;
 }
@@ -2212,6 +2224,14 @@ html {
 
 .h-48 {
   height: 12rem;
+}
+
+.h-\[100vw\] {
+  height: 100vw;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .w-64 {
@@ -2266,8 +2286,20 @@ html {
           background-clip: text;
 }
 
+.p-20 {
+  padding: 5rem;
+}
+
+.p-10 {
+  padding: 2.5rem;
+}
+
 .pt-10 {
   padding-top: 2.5rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
 }
 
 .font-inter {
@@ -2425,5 +2457,217 @@ html {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:mb-20 {
+    margin-bottom: 5rem;
+  }
+
+  .\32xl\:mb-10 {
+    margin-bottom: 2.5rem;
+  }
+
+  .\32xl\:mt-40 {
+    margin-top: 10rem;
+  }
+
+  .\32xl\:mt-64 {
+    margin-top: 16rem;
+  }
+
+  .\32xl\:ml-40 {
+    margin-left: 10rem;
+  }
+
+  .\32xl\:ml-20 {
+    margin-left: 5rem;
+  }
+
+  .\32xl\:ml-36 {
+    margin-left: 9rem;
+  }
+
+  .\32xl\:ml-32 {
+    margin-left: 8rem;
+  }
+
+  .\32xl\:h-\[800px\] {
+    height: 800px;
+  }
+
+  .\32xl\:h-\[130px\] {
+    height: 130px;
+  }
+
+  .\32xl\:h-\[1300px\] {
+    height: 1300px;
+  }
+
+  .\32xl\:h-\[1200px\] {
+    height: 1200px;
+  }
+
+  .\32xl\:h-\[1500px\] {
+    height: 1500px;
+  }
+
+  .\32xl\:h-\[1600px\] {
+    height: 1600px;
+  }
+
+  .\32xl\:h-\[1800px\] {
+    height: 1800px;
+  }
+
+  .\32xl\:h-\[2200px\] {
+    height: 2200px;
+  }
+
+  .\32xl\:h-\[1000px\] {
+    height: 1000px;
+  }
+
+  .\32xl\:w-\[400px\] {
+    width: 400px;
+  }
+
+  .\32xl\:w-\[900px\] {
+    width: 900px;
+  }
+
+  .\32xl\:w-\[970px\] {
+    width: 970px;
+  }
+
+  .\32xl\:w-\[870px\] {
+    width: 870px;
+  }
+
+  .\32xl\:w-\[500px\] {
+    width: 500px;
+  }
+
+  .\32xl\:w-\[200px\] {
+    width: 200px;
+  }
+
+  .\32xl\:p-40 {
+    padding: 10rem;
+  }
+
+  .\32xl\:pt-20 {
+    padding-top: 5rem;
+  }
+
+  .\32xl\:pb-20 {
+    padding-bottom: 5rem;
+  }
+
+  .\32xl\:pt-10 {
+    padding-top: 2.5rem;
+  }
+
+  .\32xl\:pb-14 {
+    padding-bottom: 3.5rem;
+  }
+
+  .\32xl\:pb-16 {
+    padding-bottom: 4rem;
+  }
+
+  .\32xl\:pl-10 {
+    padding-left: 2.5rem;
+  }
+
+  .\32xl\:pr-10 {
+    padding-right: 2.5rem;
+  }
+
+  .\32xl\:pb-10 {
+    padding-bottom: 2.5rem;
+  }
+
+  .\32xl\:pt-4 {
+    padding-top: 1rem;
+  }
+
+  .\32xl\:pb-12 {
+    padding-bottom: 3rem;
+  }
+
+  .\32xl\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .\32xl\:text-\[90px\] {
+    font-size: 90px;
+  }
+
+  .\32xl\:text-\[80px\] {
+    font-size: 80px;
+  }
+
+  .\32xl\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .\32xl\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .\32xl\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .\32xl\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .\32xl\:text-\[130px\] {
+    font-size: 130px;
+  }
+
+  .\32xl\:text-\[150px\] {
+    font-size: 150px;
+  }
+
+  .\32xl\:text-\[140px\] {
+    font-size: 140px;
+  }
+
+  .\32xl\:text-\[120px\] {
+    font-size: 120px;
+  }
+
+  .\32xl\:text-\[110px\] {
+    font-size: 110px;
+  }
+
+  .\32xl\:text-\[100px\] {
+    font-size: 100px;
+  }
+
+  .\32xl\:text-\[60px\] {
+    font-size: 60px;
+  }
+
+  .\32xl\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .\32xl\:text-\[70px\] {
+    font-size: 70px;
+  }
+
+  .\32xl\:leading-normal {
+    line-height: 1.5;
   }
 }
