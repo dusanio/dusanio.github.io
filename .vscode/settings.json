@@ -1,8 +1,9 @@
 {
-    "discord.lowerDetailsNoWorkspaceFound": "Web Developing",
-    "discord.lowerDetailsIdling": "Web Developing",
-    "discord.lowerDetailsEditing": "Web Developing",
-    "discord.lowerDetailsDebugging": "Web Developing",
-    "discord.largeImageIdling": "Web Developing",
-    "discord.detailsIdling": "Web Developing"
+  "discord.lowerDetailsNoWorkspaceFound": "Web Developing",
+  "discord.lowerDetailsIdling": "Web Developing",
+  "discord.lowerDetailsEditing": "Web Developing",
+  "discord.lowerDetailsDebugging": "Web Developing",
+  "discord.largeImageIdling": "Web Developing",
+  "discord.detailsIdling": "Web Developing",
+  "liveServer.settings.port": 5501
 }
