@@ -1,365 +1,377 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dusan's Profile</title>
+    <title>Dusan Dulic | Portfolio</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-name">Dusan Trajkovic</span>
+        </div>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="top-actions">
+          <a class="icon-link" href="https://github.com/dusanio" target="_blank" aria-label="GitHub">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.95.58.11.79-.25.79-.56 0-.28-.01-1.03-.02-2.02-3.2.7-3.88-1.54-3.88-1.54-.53-1.35-1.29-1.71-1.29-1.71-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.77 2.74 1.26 3.41.96.11-.75.41-1.26.74-1.55-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.1-.12-.3-.52-1.51.11-3.15 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.64.23 2.85.11 3.15.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.39-5.25 5.67.42.37.8 1.1.8 2.22 0 1.6-.02 2.89-.02 3.29 0 .31.21.68.8.56A10.99 10.99 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"
+              />
+            </svg>
+          </a>
+          <a class="icon-link" href="https://linkedin.com/in/dusanio" target="_blank" aria-label="LinkedIn">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM8.34 18H5.67V10h2.67v8ZM7 8.83a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1Zm11 9.17h-2.67v-3.94c0-.94-.02-2.16-1.32-2.16-1.32 0-1.52 1.03-1.52 2.09V18H9.82V10h2.56v1.09h.04c.36-.68 1.23-1.4 2.53-1.4 2.7 0 3.2 1.78 3.2 4.1V18Z"
+              />
+            </svg>
+          </a>
+          <a class="button primary" href="mailto:trajkodulic@gmail.com">Get in touch</a>
+        </div>
+      </header>
 
-  <body class="font-inter bg-[#010728]">
-    <div class="pt-32 lg:flex items-center justify-center">
-      <div class="flex justify-around gap-10">
-        <div class="hidden lg:block leading-none card">
-          <figure>
-            <img
-              src="dushan2.png"
-              class="h-[380px] xl:h-[450px] 2xl:h-[550px] rounded-t-lg"
-            />
-          </figure>
-          <div
-            class="card-body glass-effect rounded-br-[20px] rounded-bl-[20px] w-[380px] xl:w-[450px] 2xl:w-[550px] ml-auto mr-auto"
-          >
-            <h2 class="card-title">
-              <span
-                class="2xl:text-[40px] 2xl:leading-normal text-2xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-green-400"
-                >Dusan</span
-              >
-            </h2>
-            <p class="text-white 2xl:text-xl">
-              <span
-                class="font-bold text-transparent bg-clip-text bg-gradient-to-l from-purple-400 to-green-400"
-                >Hire me</span
-              >
-              and sail into a sea, <br />full of
-              <span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-green-400 font-bold"
-                >creativeness</span
-              >
-              that will <br />make your website
-              <span
-                class="text-transparent bg-clip-text bg-gradient-to-l from-purple-400 to-green-400 font-bold"
-                >unique</span
-              >
-              and <br />one of best looking on entire
-              <span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-green-400 font-bold"
-                >web</span
-              >
+      <main>
+        <section class="hero" id="home">
+          <div class="hero-copy">
+            <p class="eyebrow">Frontend engineer · Product-minded</p>
+            <h1>Shipping calm, resilient web apps with React craft and product sense.</h1>
+            <p class="lede">
+              I build component systems that stay fast, accessible, and easy to evolve. Bridging design and engineering so React frontends land polished, predictable, and on time.
             </p>
-            <div class="card-actions justify-start items-center pt-4">
-              <a href="https://github.com/dusanio" target="_blank">
-                <img src="github.png" class="w-6 hover:opacity-70" />
-              </a>
-              <a href="https://linkedin.com/in/dusanio" target="_blank">
-                <img src="linkedin.png" class="w-6 hover:opacity-70" /> </a
-              ><a
-                href="https://discordapp.com/users/305390305191133186"
-                target="_blank"
-              >
-                <img src="discord.png" class="w-6 hover:opacity-70" /> </a
-              ><a href="mailto:trajkodulic@gmail.com">
-                <img src="gmail.png" class="w-7 hover:opacity-70" />
+            <div class="hero-actions">
+              <a class="button primary" href="mailto:trajkodulic@gmail.com">Start a conversation</a>
+              <a class="button ghost" href="https://linkedin.com/in/dusanio" target="_blank">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM8.34 18H5.67V10h2.67v8ZM7 8.83a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1Zm11 9.17h-2.67v-3.94c0-.94-.02-2.16-1.32-2.16-1.32 0-1.52 1.03-1.52 2.09V18H9.82V10h2.56v1.09h.04c.36-.68 1.23-1.4 2.53-1.4 2.7 0 3.2 1.78 3.2 4.1V18Z"
+                  />
+                </svg>
+                LinkedIn
               </a>
             </div>
-          </div>
-        </div>
-        <div class="ml-4">
-          <img src="me2.png" class="lg:hidden mt-4 rounded-lg h-48 md:h-96" />
-          <b>
-            <p
-              class="text-white text-5xl 2xl:text-[100px] lg:text-7xl lg:mt-0 mt-20"
-            >
-              Hi,
-            </p>
-            <p class="text-white text-4xl 2xl:text-[80px] lg:text-6xl mt-2">
-              I'm
-              <span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-green-400"
-                >Dusan</span
-              >,
-            </p>
-            <p class="text-white text-3xl 2xl:text-[60px] lg:text-5xl mt-2">
-              web developer
-            </p>
-          </b>
-
-          <p class="text-lg mt-2 lg:mt-6 2xl:text-2xl">
-            <span
-              class="text-transparent bg-clip-text bg-gradient-to-l from-purple-400 to-green-400"
-              >/ Frontend Developer /</span
-            >
-          </p>
-          <div class="block md:inline-block">
-            <div class="lg:hidden flex gap-8 mt-4 items-center">
-              <a href="https://github.com/dusanio" target="_blank">
-                <img src="github.png" class="w-8 hover:opacity-70" />
-              </a>
-              <a href="https://linkedin.com/in/dusanio" target="_blank">
-                <img src="linkedin.png" class="w-8 hover:opacity-70" /> </a
-              ><a
-                href="https://discordapp.com/users/305390305191133186"
-                target="_blank"
-              >
-                <img src="discord.png" class="w-8 hover:opacity-70" /> </a
-              ><a href="mailto:trajkodulic@gmail.com">
-                <img src="gmail.png" class="w-10 hover:opacity-70" />
-              </a>
+            <div class="hero-meta">
+              <div class="stat">
+                <span class="stat-number">4+ years</span>
+                <span class="stat-label">Design-to-build delivery</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">Ship fast</span>
+                <span class="stat-label">Astro, React, Tailwind, HTML/CSS</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">Remote</span>
+                <span class="stat-label">Available for select projects</span>
+              </div>
             </div>
-            <p class="md:hidden text-white mt-8 text-xl">
-              <span
-                class="font-bold text-transparent bg-clip-text bg-gradient-to-l from-purple-400 to-green-400"
-                >Hire me</span
-              >
-              and sail into a sea, <br />full of
-              <span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-green-400 font-bold"
-                >creativeness</span
-              >
-              that will <br />make your website
-              <span
-                class="text-transparent bg-clip-text bg-gradient-to-l from-purple-400 to-green-400 font-bold"
-                >unique</span
-              >
-              and <br />one of best looking on entire
-              <span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-green-400 font-bold"
-                >web</span
-              >
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="portrait-card">
+              <div class="portrait-frame">
+                <img src="me.jpg" alt="Portrait of Dusan" />
+                <div class="portrait-accent"></div>
+              </div>
+              <div class="info-tile">
+                <div>
+                  <p class="tile-label">Currently working with</p>
+                  <p class="tile-value">Streamflow</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="about">
+          <div class="section-header">
+            <p class="eyebrow">About</p>
+            <h2>Building interfaces that feel effortless.</h2>
+            <p class="lede">
+              From first sketch to production, I care about clarity, accessibility, and systems that scale. I work closely with design to keep handoffs light and iterations quick.
             </p>
-
-            <ol
-              class="relative border-l mt-4 ml-4 md:ml-10 border-gray-200 dark:border-gray-700"
-            >
-              <li class="mb-10 ml-6">
-                <span
-                  class="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 dark:ring-[#010728] dark:bg-blue-900"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="w-3 h-3 text-blue-300"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </span>
-                <h3
-                  class="flex items-center mb-1 text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-l from-purple-400 to-green-400"
-                >
-                  Personal Website
-                </h3>
-                <time
-                  class="block mb-2 text-sm font-normal leading-none text-gray-400"
-                  >March 10, 2020</time
-                >
-                <p
-                  class="md:max-w-[300px] lg:max-w-[500px] mb-4 text-base font-normal text-gray-400"
-                >
-                  Developed personal portfolio website with HTML and CSS and
-                  later moved to tailwindCSS.
-                </p>
-              </li>
-
-              <li class="mb-10 ml-6">
-                <span
-                  class="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 dark:ring-[#010728] dark:bg-blue-900"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="w-3 h-3 text-blue-300"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </span>
-                <h3
-                  class="flex items-center mb-1 text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-l from-purple-400 to-green-400"
-                >
-                  Streamflow Finance
-                </h3>
-                <time
-                  class="block mb-2 text-sm font-normal leading-none text-gray-400"
-                  >March 20, 2022 - September 2023</time
-                >
-                <p
-                  class="md:max-w-[300px] lg:max-w-[500px] mb-4 text-base font-normal text-gray-400"
-                >
-                  Started as developer for deploying landing pages following
-                  design from Figma using combination of HTML, tailwindCSS and
-                  JavaScript. Now developing static web pages using Astro and
-                  tailwindCSS.
-                </p>
-              </li>
-              <li class="mb-10 ml-6">
-                <span
-                  class="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 dark:ring-[#010728] dark:bg-blue-900"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="w-3 h-3 text-blue-300"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </span>
-                <h3
-                  class="flex items-center mb-1 text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-l from-purple-400 to-green-400"
-                >
-                  MultiChain Advisors Inc.
-                </h3>
-                <time
-                  class="block mb-2 text-sm font-normal leading-none text-gray-400"
-                  >August 4, 2022 - December 2023</time
-                >
-                <p
-                  class="md:max-w-[300px] lg:max-w-[500px] mb-4 text-base font-normal text-gray-400"
-                >
-                  Developing and designing websites for clients.
-                </p>
-              </li>
-              <li class="mb-10 ml-6">
-                <span
-                  class="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 dark:ring-[#010728] dark:bg-blue-900"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="w-3 h-3 text-blue-300"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </span>
-                <h3
-                  class="flex items-center mb-1 text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-l from-purple-400 to-green-400"
-                >
-                  Kreedz Climbing contribution
-                </h3>
-                <time
-                  class="block mb-2 text-sm font-normal leading-none text-gray-400"
-                  >March 18, 2023</time
-                >
-                <p
-                  class="max-w-[250px] md:max-w-[300px] lg:max-w-[500px] mb-4 text-base font-normal text-gray-400"
-                >
-                  Designed and developed front-end part of application for
-                  displaying players who finished a course in
-                  <a
-                    href="https://store.steampowered.com/app/626680/Kreedz_Climbing/"
-                    class="text-transparent bg-clip-text bg-gradient-to-l from-purple-400 to-green-400 max-w-[250px]"
-                    >Kreedz Climbing</a
-                  >
-                  game.
-                </p>
-              </li>
-            </ol>
           </div>
-        </div>
-      </div>
-    </div>
+          <div class="panel-grid">
+            <div class="panel">
+              <h3>How I work</h3>
+              <p>
+                I move fast with prototypes, lock decisions early, and sweat the last 10% so React/Astro frontends feel intentional. Tooling: React with solid state patterns, semantic HTML, modern CSS/Tailwind, and light JS for motion when it matters.
+              </p>
+              <p>
+                Collaboration stays calm and async: shared Figma files, tight written context, crisp tickets, and short feedback loops so shipping never stalls.
+              </p>
+            </div>
+            <div class="panel">
+              <h3>Capabilities</h3>
+              <ul class="tag-list">
+                <li>React frontends & state design</li>
+                <li>Design systems & UI kits</li>
+                <li>Landing pages with strong conversion</li>
+                <li>Component libraries in Tailwind</li>
+                <li>Astro static sites</li>
+                <li>Responsive, accessible layouts</li>
+                <li>Performance-first builds</li>
+              </ul>
+            </div>
+            <div class="panel">
+              <h3>Tools I trust</h3>
+              <ul class="tool-grid">
+                <li>React</li>
+                <li>Astro</li>
+                <li>Tailwind CSS</li>
+                <li>TypeScript</li>
+                <li>Figma</li>
+                <li>GitHub</li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
-    <p
-      class="pt-10 text-center 2xl:leading-normal 2xl:text-5xl font-bold text-3xl lg:text-2xl text-green-400"
-    >
-      Contributions across companies
-    </p>
-    <div class="flex justify-center pt-10 mx-4">
-      <div class="mx-2 md:mx-0 card lg:card-side shadow-xl">
-        <figure
-          class="h-[300px] lg:h-[350px] lg:h-[350px] lg:w-[250px] bg-black"
-        >
-          <img src="streamflow-finance.png" alt="Streamflow Finance" />
-        </figure>
-        <div
-          class="card-body glass-effect rounded-bl-[20px] rounded-tr-none lg:rounded-bl-none lg:rounded-tr-[20px] rounded-br-[20px] md:w-[450px]"
-        >
-          <h2 class="card-title text-[#193df9] text-2xl">Streamflow Finance</h2>
-          <span class="text-white"
-            >UI Developer / SE Intern (April 2022 - Sep 2023)</span
-          >
-          <span class="text-white"
-            >Customer Experience Associate (March 2025 - Present)</span
-          >
-          <p class="text-white">
-            <span class="font-bold text-lg text-[#193df9]">Streamflow</span>
-            is a #1 token vesting platform on Solana. You can find Streamflow
-            listed in the official Solana documentation under token vesting.
-          </p>
-          <div class="card-actions justify-start pt-4 lg:justify-end">
-            <a href="https://streamflow.finance" target="_blank"
-              ><button
-                class="bg-[#193df9] text-white btn hover:bg-[#193df9] border-none hover:border-none hover:opacity-70"
-              >
-                Visit Website
-              </button></a
-            >
+        <section class="section" id="work">
+          <div class="section-header">
+            <p class="eyebrow">Selected Work</p>
+            <h2>Trusted by teams that ship quickly.</h2>
+            <p class="lede">Lean engagements with clear outcomes—whether designing net-new experiences or refactoring existing surfaces.</p>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="pb-20 flex justify-center pt-10 mx-4">
-      <div class="mx-2 md:mx-0 card lg:card-side shadow-xl">
-        <figure class="h-[300px] lg:h-auto lg:w-[250px] bg-black">
-          <img
-            src="multichain-advisors.png"
-            alt="MultiChain Advisors Inc."
-            class="w-[175px] h-[175px]"
-          />
-        </figure>
-        <div
-          class="card-body glass-effect rounded-bl-[20px] rounded-tr-none lg:rounded-bl-none lg:rounded-tr-[20px] rounded-br-[20px] md:w-[450px]"
-        >
-          <h2 class="card-title text-[#01a4a1] text-2xl">
-            MultiChain Advisors Inc.
-          </h2>
-          <span class="text-white">Web Developer (Aug 2022 - Dec 2023)</span>
-          <p class="text-white">
-            <span class="font-bold text-lg text-[#01a4a1]">MultiChain </span>
-            specializes in strategy, growth, marketing, community management,
-            partnerships, capital raise, M&A advisory & cost synergies for big
-            brands,<br class="block md:hidden" />
-            startups & web 3.0 companies.
-          </p>
-          <div class="card-actions justify-start pt-4 lg:justify-end">
-            <a href="https://multichainadv.com" target="_blank"
-              ><button
-                class="bg-[#01a4a1] text-white btn hover:bg-[#01a4a1] border-none hover:border-none hover:opacity-70"
-              >
-                Visit Website
-              </button></a
-            >
+          <div class="work-grid">
+            <article class="work-card">
+              <div class="work-header">
+                <div class="work-meta">
+                  <span class="pill">Sep 2025 – Present</span>
+                  <span class="pill subtle">CEO & Founder</span>
+                </div>
+              </div>
+              <div class="work-body">
+                <div class="work-logo">
+                  <img src="solcialize.png" alt="Solcialize logo" />
+                </div>
+                <div>
+                  <h3>Solcialize</h3>
+                  <p>
+                    Crypto super app for Solana users, built as a social layer and all-in-one hub for discovery, community, and on-chain activity.
+                  </p>
+                  <div class="tag-row">
+                    <span class="pill subtle">Founder</span>
+                    <span class="pill subtle">Product</span>
+                    <span class="pill subtle">React</span>
+                    <span class="pill subtle">Solana</span>
+                  </div>
+                </div>
+              </div>
+              <div class="work-actions">
+                <a class="button ghost" href="https://solcialize.com" target="_blank">Visit site</a>
+              </div>
+            </article>
+
+            <article class="work-card">
+              <div class="work-header">
+                <div class="work-meta">
+                  <span class="pill">Mar 2025 – Present</span>
+                  <span class="pill subtle">Business Development</span>
+                  <span class="pill">Apr 2022 – Oct 2023</span>
+                  <span class="pill subtle">UI Developer</span>
+                </div>
+              </div>
+              <div class="work-body">
+                <div class="work-logo">
+                  <img src="streamflow-finance.png" alt="Streamflow Finance logo" />
+                </div>
+                <div>
+                  <h3>Streamflow Finance</h3>
+                  <p>
+                    #1 token vesting platform on Solana. Built and shipped marketing sites and product surfaces across Astro + Tailwind, keeping pages fast and maintainable. Returned in 2025 to drive business development with partners and customers.
+                  </p>
+                  <div class="tag-row">
+                    <span class="pill subtle">Astro</span>
+                    <span class="pill subtle">React</span>
+                    <span class="pill subtle">Tailwind</span>
+                    <span class="pill subtle">Design systems</span>
+                    <span class="pill subtle">BD & Partnerships</span>
+                  </div>
+                </div>
+              </div>
+              <div class="work-actions">
+                <a class="button ghost" href="https://streamflow.finance" target="_blank">Visit site</a>
+              </div>
+            </article>
+
+            <article class="work-card">
+              <div class="work-header">
+                <div class="work-meta">
+                  <span class="pill">Aug 2022 – Dec 2023</span>
+                  <span class="pill subtle">Web Developer</span>
+                </div>
+              </div>
+              <div class="work-body">
+                <div class="work-logo">
+                  <img src="multichain-advisors.png" alt="MultiChain Advisors logo" />
+                </div>
+                <div>
+                  <h3>MultiChain Advisors Inc.</h3>
+                  <p>
+                    Shipped marketing and product pages for strategy and growth initiatives. Balanced bold visuals with restrained layouts for web3 clients.
+                  </p>
+                  <div class="tag-row">
+                    <span class="pill subtle">Web3</span>
+                    <span class="pill subtle">UI implementation</span>
+                    <span class="pill subtle">Performance</span>
+                  </div>
+                </div>
+              </div>
+              <div class="work-actions">
+                <a class="button ghost" href="https://multichainadv.com" target="_blank">Visit site</a>
+              </div>
+            </article>
           </div>
+        </section>
+
+        <section class="section" id="timeline">
+          <div class="section-header">
+            <p class="eyebrow">Highlights</p>
+            <h2>Moments that shaped the craft.</h2>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div>
+                <p class="timeline-date">2025</p>
+                <h3>Solcialize - crypto super app</h3>
+                <p>Building <a href="https://solcialize.com" target="_blank">Solcialize</a>, a social-first super app for Solana users that unifies discovery, community, and on-chain activity in one hub.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div>
+                <p class="timeline-date">2023</p>
+                <h3>20+ Astro pages for Streamflow</h3>
+                <p>Delivered a high-volume Astro rollout and partnered with SEO specialists to significantly lift Streamflow’s search performance.</p>
+              </div>
+            </div>
+             <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div>
+                <p class="timeline-date">2023</p>
+                <h3>Kreedz Climbing contribution</h3>
+                <p>Designed and built a frontend experience for leaderboard visualization, focusing on clarity for competitive players.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div>
+                <p class="timeline-date">2022</p>
+                <h3>Moved to Astro + Tailwind</h3>
+                <p>Shifted marketing sites to static builds for speed, predictable deploys, and minimal runtime overhead.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div>
+                <p class="timeline-date">2020</p>
+                <h3>First personal site launch</h3>
+                <p>Started shipping my own work, iterating on layout and typography to keep things crisp and approachable.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section contact" id="contact">
+          <div class="contact-card">
+            <div>
+              <p class="eyebrow">Let’s talk</p>
+              <h2>Have a project in mind?</h2>
+              <p class="lede">Send a short brief or a link to your figma file. I’ll reply within one business day.</p>
+              <div class="contact-actions">
+                <a class="button primary" href="mailto:trajkodulic@gmail.com">Send me an email</a>
+                <a class="button ghost" href="https://github.com/dusanio" target="_blank">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.95.58.11.79-.25.79-.56 0-.28-.01-1.03-.02-2.02-3.2.7-3.88-1.54-3.88-1.54-.53-1.35-1.29-1.71-1.29-1.71-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.77 2.74 1.26 3.41.96.11-.75.41-1.26.74-1.55-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.1-.12-.3-.52-1.51.11-3.15 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.64.23 2.85.11 3.15.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.39-5.25 5.67.42.37.8 1.1.8 2.22 0 1.6-.02 2.89-.02 3.29 0 .31.21.68.8.56A10.99 10.99 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"
+                    />
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+            <div class="contact-meta">
+              <div class="pill">Based in Europe</div>
+              <div class="pill subtle">Async collaboration</div>
+              <div class="pill subtle">Timezone friendly</div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Crafted by Dusan Trajkovic · 2025</p>
+        <div class="footer-links">
+          <a href="https://linkedin.com/in/dusanio" target="_blank">LinkedIn</a>
+          <a href="https://github.com/dusanio" target="_blank">GitHub</a>
+          <a href="mailto:trajkodulic@gmail.com">Email</a>
         </div>
-      </div>
+      </footer>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+    <button class="back-to-top" aria-label="Back to top">
+      ↑
+    </button>
+    <script>
+      (() => {
+        const topbar = document.querySelector('.topbar');
+        const backToTop = document.querySelector('.back-to-top');
+        if (!topbar) return;
+
+        let lastY = window.pageYOffset || 0;
+        let ticking = false;
+
+        const update = (currentY) => {
+          const atTop = currentY <= 4;
+          if (atTop) {
+            topbar.classList.remove('topbar--hidden');
+          } else {
+            topbar.classList.add('topbar--hidden');
+          }
+
+          if (backToTop) {
+            if (currentY > 240) {
+              backToTop.classList.add('visible');
+            } else {
+              backToTop.classList.remove('visible');
+            }
+          }
+          lastY = currentY;
+        };
+
+        window.addEventListener('scroll', () => {
+          const currentY = window.pageYOffset || 0;
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              update(currentY);
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+
+        if (backToTop) {
+          backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
