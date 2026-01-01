@@ -82,7 +82,7 @@
             </div>
           </div>
           <div class="hero-visual" aria-hidden="true">
-            <div class="portrait-card">
+            <div class="portrait-card tilt glow-sweep" data-tilt>
               <div class="portrait-frame">
                 <img src="me.jpg" alt="Portrait of Dusan" />
                 <div class="portrait-accent"></div>
@@ -97,7 +97,7 @@
           </div>
         </section>
 
-        <section class="section" id="about">
+        <section class="section reveal" id="about" data-section="about" data-reveal>
           <div class="section-header">
             <p class="eyebrow">About</p>
             <h2>Building interfaces that feel effortless.</h2>
@@ -141,14 +141,14 @@
           </div>
         </section>
 
-        <section class="section" id="work">
+        <section class="section reveal" id="work" data-section="work" data-reveal>
           <div class="section-header">
             <p class="eyebrow">Selected Work</p>
             <h2>Trusted by teams that ship quickly.</h2>
             <p class="lede">Lean engagements with clear outcomes—whether designing net-new experiences or refactoring existing surfaces.</p>
           </div>
           <div class="work-grid">
-            <article class="work-card">
+            <article class="work-card tilt glow-sweep" data-tilt>
               <div class="work-header">
                 <div class="work-meta">
                   <span class="pill">Sep 2025 – Present</span>
@@ -177,7 +177,7 @@
               </div>
             </article>
 
-            <article class="work-card">
+            <article class="work-card tilt glow-sweep" data-tilt>
               <div class="work-header">
                 <div class="work-meta">
                   <span class="pill">Mar 2025 – Present</span>
@@ -209,7 +209,7 @@
               </div>
             </article>
 
-            <article class="work-card">
+            <article class="work-card tilt glow-sweep" data-tilt>
               <div class="work-header">
                 <div class="work-meta">
                   <span class="pill">Aug 2022 – Dec 2023</span>
@@ -239,7 +239,7 @@
           </div>
         </section>
 
-        <section class="section" id="timeline">
+        <section class="section reveal" id="timeline" data-section="timeline" data-reveal>
           <div class="section-header">
             <p class="eyebrow">Highlights</p>
             <h2>Moments that shaped the craft.</h2>
@@ -288,7 +288,7 @@
           </div>
         </section>
 
-        <section class="section contact" id="contact">
+        <section class="section contact reveal" id="contact" data-section="contact" data-reveal>
           <div class="contact-card">
             <div>
               <p class="eyebrow">Let’s talk</p>
@@ -332,17 +332,16 @@
       (() => {
         const topbar = document.querySelector('.topbar');
         const backToTop = document.querySelector('.back-to-top');
-        if (!topbar) return;
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        let lastY = window.pageYOffset || 0;
-        let ticking = false;
-
-        const update = (currentY) => {
+        const updateTopUi = (currentY) => {
           const atTop = currentY <= 4;
-          if (atTop) {
-            topbar.classList.remove('topbar--hidden');
-          } else {
-            topbar.classList.add('topbar--hidden');
+          if (topbar) {
+            if (atTop) {
+              topbar.classList.remove('topbar--hidden');
+            } else {
+              topbar.classList.add('topbar--hidden');
+            }
           }
 
           if (backToTop) {
@@ -352,14 +351,14 @@
               backToTop.classList.remove('visible');
             }
           }
-          lastY = currentY;
         };
 
+        let ticking = false;
         window.addEventListener('scroll', () => {
           const currentY = window.pageYOffset || 0;
           if (!ticking) {
             window.requestAnimationFrame(() => {
-              update(currentY);
+              updateTopUi(currentY);
               ticking = false;
             });
             ticking = true;
@@ -371,6 +370,52 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
           });
         }
+
+        // Scroll-reveal sections
+        const revealNodes = Array.from(document.querySelectorAll('[data-reveal]'));
+        if (revealNodes.length) {
+          if (prefersReduced) {
+            revealNodes.forEach((el) => el.classList.add('is-visible'));
+          } else {
+            const revealObserver = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                  }
+                });
+              },
+              { threshold: 0.28 }
+            );
+
+            revealNodes.forEach((el) => revealObserver.observe(el));
+          }
+        }
+
+        // Tilt micro-interaction
+        const tiltTargets = Array.from(document.querySelectorAll('[data-tilt]'));
+        const finePointer = window.matchMedia('(pointer: fine)').matches;
+        if (tiltTargets.length && finePointer && !prefersReduced) {
+          tiltTargets.forEach((el) => {
+            const handleMove = (event) => {
+              const rect = el.getBoundingClientRect();
+              const x = (event.clientX - rect.left) / rect.width - 0.5;
+              const y = (event.clientY - rect.top) / rect.height - 0.5;
+              const rotateX = (-y * 10).toFixed(2);
+              const rotateY = (x * 10).toFixed(2);
+              el.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+            };
+
+            const reset = () => {
+              el.style.transform = '';
+            };
+
+            el.addEventListener('mousemove', handleMove);
+            el.addEventListener('mouseleave', reset);
+          });
+        }
+
       })();
     </script>
   </body>
