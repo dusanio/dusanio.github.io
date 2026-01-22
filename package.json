@@ -1,28 +1,19 @@
 {
   "name": "dusanio.github.io",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Portfolio website built with Astro and Tailwind CSS",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "css": "npx tailwindcss -i tailwind.css -o css/style.css --watch"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dusanio/dusanio.github.io.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dusanio/dusanio.github.io/issues"
-  },
-  "homepage": "https://github.com/dusanio/dusanio.github.io#readme",
-  "devDependencies": {
-    "tailwindcss": "^3.1.4"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "daisyui": "^2.18.0",
-    "vanilla-tilt": "^1.7.2"
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.0.0",
+    "tailwindcss": "^3.4.0"
   }
 }
+

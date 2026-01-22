@@ -1,0 +1,37 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  position: string;
+  url: string;
+  delay?: number;
+  label?: string;
+}
+
+const { name, description, position, label, url, delay = 0 } = Astro.props;
+---
+
+<a 
+  href={url} 
+  target="_blank" 
+  rel="noopener noreferrer"
+  class="group block p-6 bg-[#141414] border border-[#2a2a2a] rounded-xl hover:bg-[#1a1a1a] hover:border-[#3a3a3a] transition-all duration-300"
+  style={`animation-delay: ${delay}ms`}
+>
+  <div class="flex justify-between items-start">
+    <div class="flex-1">
+      <h3 class="text-lg font-medium text-white mb-1 group-hover:text-gray-200 transition-colors">{name}</h3>
+      <p class="text-sm text-[#888888] mb-2">{description}</p>
+      <span class="inline-block text-xs px-3 py-1 bg-[#0a0a0a] border border-[#2a2a2a] rounded-full text-[#888888]">
+        {position}
+      </span>
+       <span class="inline-block text-xs px-3 py-1 bg-[#0a0a0a] border border-[#2a2a2a] rounded-full text-[#888888]">
+        {label}
+      </span>
+    </div>
+    <span class="text-lg text-[#888888] group-hover:translate-x-1 group-hover:text-white transition-all duration-300">
+      →
+    </span>
+  </div>
+</a>
+
