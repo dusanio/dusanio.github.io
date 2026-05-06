@@ -1,0 +1,42 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  position: string;
+  url: string;
+  delay?: number;
+  label?: string;
+}
+
+const { name, description, position, label, url, delay = 0 } = Astro.props;
+const badges = [position, label].filter((badge): badge is string => Boolean(badge));
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={`Open ${name} website`}
+  class="group block rounded-lg border border-[#2a2a2a] bg-[#141414] p-6 transition-all duration-300 hover:border-[#3a3a3a] hover:bg-[#1a1a1a]"
+  style={`animation-delay: ${delay}ms`}
+>
+  <div class="flex items-start justify-between gap-4">
+    <div class="min-w-0 flex-1">
+      <h3 class="mb-1 text-lg font-medium text-white transition-colors group-hover:text-gray-200">{name}</h3>
+      <p class="text-sm text-[#888888] mb-2">{description}</p>
+
+      <div class="flex flex-wrap gap-2">
+        {badges.map((badge) => (
+          <span class="inline-block rounded-full border border-[#2a2a2a] bg-[#0a0a0a] px-3 py-1 text-xs text-[#888888]">
+            {badge}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <span aria-hidden="true" class="text-lg text-[#888888] transition-all duration-300 group-hover:translate-x-1 group-hover:text-white">
+      &rarr;
+    </span>
+  </div>
+</a>
+

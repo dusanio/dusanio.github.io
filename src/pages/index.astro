@@ -1,0 +1,245 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Footer from '../components/Footer.astro';
+
+const projects = [
+  {
+    name: 'Streamflow Finance',
+    description: '#1 token vesting platform on Solana',
+    position: 'Business Development & Sales',
+    url: 'https://streamflow.finance',
+    label: 'Web3, Solana',
+  },
+  {
+    name: 'Telebux',
+    description: 'CRM built on top of Telegram',
+    position: 'Founder',
+    url: 'https://telebux.xyz',
+    label: 'Business, Management',
+  },
+  {
+    name: 'Kreedz',
+    description: 'CS 1.6 gaming platform',
+    position: 'ex UI Designer & Frontend Dev',
+    url: 'https://kreedz.com',
+    label: 'Web2, Gaming',
+  },
+  {
+    name: 'MultiChain Advisors',
+    description: 'Web3 strategy and growth agency',
+    position: 'ex UI Developer',
+    url: 'https://multichainadv.com',
+    label: 'Web3, Solana',
+  },
+];
+
+const socialLinks = [
+  { href: 'https://github.com/dusanio', label: 'GitHub' },
+  { href: 'https://linkedin.com/in/dusanio', label: 'LinkedIn' },
+  { href: 'https://x.com/thedusanio', label: 'X' },
+  { href: 'https://t.me/dusanio', label: 'Telegram' },
+];
+---
+
+<Layout title="Dusan Trajkovic | Portfolio">
+  <Header />
+
+  <main class="max-w-3xl mx-auto px-6 pt-24">
+    <section class="py-20 animate-fade-in" aria-labelledby="intro-heading">
+      <div class="flex items-center gap-6 mb-6">
+        <img
+          src="/dusanio_pfp.png"
+          alt="Dusan Trajkovic"
+          class="w-20 h-20 bg-white rounded-full object-cover border-2 border-[#2a2a2a]"
+        />
+        <div>
+          <p class="text-xl text-white font-medium">
+            Dusan Trajkovic
+          </p>
+          <p class="text-[#888888]">
+            Frontend Engineer
+          </p>
+        </div>
+      </div>
+
+      <h1 id="intro-heading" class="text-3xl sm:text-4xl font-normal leading-tight mb-4 tracking-tight">
+        Frontend engineer crafting calm, resilient web experiences.
+      </h1>
+      <p class="text-lg text-[#888888] max-w-lg leading-relaxed">
+        I build polished React and Astro interfaces with attention to accessibility and performance.
+      </p>
+
+      <div class="flex flex-wrap gap-3 mt-4 text-xs">
+        {socialLinks.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-full border border-[#2a2a2a] bg-[#141414] px-4 py-2 text-[#888888] transition-colors hover:text-white"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section id="about" class="section py-12">
+      <h2 class="text-xs font-medium uppercase tracking-wider text-[#888888] mb-6">About</h2>
+      <p class="text-lg text-[#cccccc] leading-relaxed mb-8">
+        I'm a frontend engineer with 4+ years of experience shipping web applications.
+        I work with React, Astro, and Tailwind CSS to build interfaces that feel effortless.
+        Currently working at <a href="https://streamflow.finance" target="_blank" rel="noopener noreferrer" class="text-white hover:underline underline-offset-3">Streamflow</a>, and building <a href="https://telebux.xyz" target="_blank" rel="noopener noreferrer" class="text-white hover:underline underline-offset-3">Telebux</a>.
+        Previously at <a href="https://multichainadv.com" target="_blank" rel="noopener noreferrer" class="text-white hover:underline underline-offset-3">MultiChain Advisors</a>.
+      </p>
+    </section>
+
+    <section id="projects" class="section py-12">
+      <h2 class="text-xs font-medium uppercase tracking-wider text-[#888888] mb-6">Experience</h2>
+
+      <div class="relative mb-4">
+        <input
+          type="text"
+          id="search-input"
+          aria-label="Search experience"
+          placeholder="Search experience..."
+          class="w-full rounded-lg border border-[#2a2a2a] bg-[#141414] px-4 py-3 pr-12 text-white placeholder-[#888888] transition-all focus:border-[#444444] focus:bg-[#1a1a1a] focus:outline-none"
+        />
+        <svg
+          class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#888888]"
+          aria-hidden="true"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          />
+        </svg>
+      </div>
+
+      <div id="projects-grid" class="flex flex-col gap-3">
+        {projects.map((project, index) => (
+          <div
+            class="project-item"
+            data-search={`${project.name} ${project.description} ${project.position} ${project.label}`.toLowerCase()}
+          >
+            <ProjectCard
+              name={project.name}
+              description={project.description}
+              position={project.position}
+              label={project.label}
+              url={project.url}
+              delay={index * 50}
+            />
+          </div>
+        ))}
+      </div>
+
+      <div id="no-results" class="hidden text-center py-8 text-[#888888]">
+        No projects found
+      </div>
+    </section>
+
+    <section id="contact" class="section py-12">
+      <h2 class="text-xs font-medium uppercase tracking-wider text-[#888888] mb-6">Contact</h2>
+      <p class="text-lg text-[#cccccc] leading-relaxed mb-6">
+        Available for select projects &mdash; reach out at
+        <a href="mailto:trajkodulic@gmail.com" class="text-white hover:underline underline-offset-3">trajkodulic@gmail.com</a>
+        or <a href="https://t.me/dusanio" target="_blank" rel="noopener noreferrer" class="text-white hover:underline underline-offset-3">@dusanio</a> on Telegram.
+      </p>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  const searchInput = document.querySelector<HTMLInputElement>('#search-input');
+  const projectItems = Array.from(document.querySelectorAll<HTMLElement>('.project-item'));
+  const noResults = document.getElementById('no-results');
+
+  if (searchInput && noResults) {
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      for (const item of projectItems) {
+        const matchesQuery = item.dataset.search?.includes(query) ?? false;
+        item.hidden = !matchesQuery;
+
+        if (matchesQuery) {
+          visibleCount++;
+        }
+      }
+
+      noResults.classList.toggle('hidden', visibleCount > 0);
+    });
+  }
+
+  const sections = document.querySelectorAll<HTMLElement>('.section');
+
+  if ('IntersectionObserver' in window) {
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+      }
+    });
+    }, { threshold: 0.1 });
+
+    sections.forEach((section) => sectionObserver.observe(section));
+  } else {
+    sections.forEach((section) => section.classList.add('visible'));
+  }
+</script>
+
+<style>
+  .section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .project-item[hidden] {
+    display: none;
+  }
+
+  .animate-fade-in {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .section {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .animate-fade-in {
+      animation: none;
+    }
+  }
+</style>
+
