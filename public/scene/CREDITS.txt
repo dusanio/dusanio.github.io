@@ -1,0 +1,19 @@
+3D assets used in the scene. All CC0 (public domain) from Poly Haven, https://polyhaven.com
+Optimised with gltf-transform (meshopt geometry, 512px WebP textures) and sharp (1k WebP).
+
+Models
+  pachira_aquatica_01  https://polyhaven.com/a/pachira_aquatica_01
+  potted_plant_02      https://polyhaven.com/a/potted_plant_02
+  fern_02              https://polyhaven.com/a/fern_02
+  calathea_orbifolia_01 https://polyhaven.com/a/calathea_orbifolia_01
+
+Textures
+  concrete_slab_wall   https://polyhaven.com/a/concrete_slab_wall
+  concrete_floor_02    https://polyhaven.com/a/concrete_floor_02
+
+Environment
+  modern_buildings_night (1k HDR)  https://polyhaven.com/a/modern_buildings_night
+
+Logos (public/scene/logos)
+  Telebux, Streamflow and MultiChain Advisors (MCA) marks are trademarks of their respective owners,
+  taken from each company's website and converted to white masks for the particle exhibits.

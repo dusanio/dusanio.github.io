@@ -1,0 +1,177 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContentShell from '../components/ContentShell.astro';
+import { about, profile, projects } from '../data/site';
+---
+
+<Layout title={`About | ${profile.name}`}>
+  <ContentShell mode="about" side="left" accent="#dfe6ff">
+    <div class="chips eyebrow">
+      {profile.roles.map((role) => <span class="chip">{role}</span>)}
+    </div>
+
+    <h1>About</h1>
+    <p class="lede">{profile.headline}</p>
+
+    <div class="intro">
+      <img src="/dusanio_pfp.png" alt={profile.name} width="64" height="64" />
+      <div>
+        {about.intro.map((p) => <p>{p}</p>)}
+      </div>
+    </div>
+
+    <h2>What I do</h2>
+    <div class="disciplines">
+      {about.disciplines.map((d, i) => (
+        <article>
+          <span class="num">{String(i + 1).padStart(2, '0')}</span>
+          <h3>{d.title}</h3>
+          <p>{d.body}</p>
+        </article>
+      ))}
+    </div>
+
+    <h2>Experience</h2>
+    <ol class="timeline">
+      {projects.map((p) => (
+        <li>
+          <a href={`/work/${p.slug}`} style={`--c:${p.accent}`}>
+            <span class="status"><span class="chip chip-status" data-status={p.status}>{p.status}</span></span>
+            <span class="name">{p.name}</span>
+            <span class="role">{p.role}</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+
+    <h2>Toolkit</h2>
+    <ul class="toolkit chips">
+      {about.toolkit.map((t) => <li class="chip">{t}</li>)}
+    </ul>
+
+    <h2>Contact</h2>
+    <p class="contact">
+      Available for select projects. Reach out at
+      <a href={`mailto:${profile.email}`}>{profile.email}</a> or
+      <a href={profile.telegram.url} target="_blank" rel="noopener noreferrer">{profile.telegram.handle}</a> on Telegram.
+    </p>
+    <ul class="socials">
+      {profile.socials.map((s) => (
+        <li><a href={s.href} target="_blank" rel="noopener noreferrer">{s.label} <span aria-hidden="true">↗</span></a></li>
+      ))}
+    </ul>
+  </ContentShell>
+</Layout>
+
+<style>
+  .intro {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 22px;
+    align-items: start;
+  }
+  .intro img {
+    width: 64px;
+    height: 64px;
+    background: #fff;
+    object-fit: cover;
+    border: 1px solid var(--line);
+  }
+  .disciplines {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .disciplines article {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    column-gap: 0;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .disciplines span {
+    padding-top: 6px;
+  }
+  .disciplines h3 {
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+  .disciplines p {
+    grid-column: 2;
+    font-size: 15px;
+  }
+  .timeline {
+    list-style: none;
+    border-top: 1px solid var(--line);
+  }
+  .timeline a {
+    display: grid;
+    grid-template-columns: 130px 1fr auto;
+    grid-template-areas: 'status name arrow' 'status role arrow';
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+    transition: padding 0.3s;
+  }
+  .timeline a:hover {
+    padding-left: 8px;
+  }
+  .timeline .status {
+    grid-area: status;
+    align-self: center;
+  }
+  .timeline .name {
+    grid-area: name;
+    font-size: 22px;
+    font-weight: 300;
+    transition: color 0.3s;
+  }
+  .timeline a:hover .name {
+    color: var(--c);
+  }
+  .timeline .role {
+    grid-area: role;
+    color: var(--dim);
+    font-size: 14px;
+  }
+  .timeline .arrow {
+    grid-area: arrow;
+    align-self: center;
+    color: var(--dim);
+  }
+  .toolkit {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .contact a {
+    color: var(--ink);
+    border-bottom: 1px solid rgba(238, 241, 246, 0.35);
+  }
+  .contact a:hover {
+    border-color: var(--ink);
+  }
+  .socials {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .socials a {
+    color: var(--dim);
+  }
+  .socials a:hover {
+    color: var(--ink);
+  }
+  @media (max-width: 900px) {
+    .timeline a {
+      grid-template-columns: 1fr auto;
+      grid-template-areas: 'status arrow' 'name arrow' 'role arrow';
+    }
+  }
+</style>

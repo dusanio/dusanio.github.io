@@ -1,0 +1,159 @@
+---
+import { stageSwap } from '../scripts/transitions';
+/**
+ * A scrolling content column over the persistent 3D stage.
+ * `side` puts the column right (exhibit framed left) or left (exhibit framed right).
+ */
+interface Props {
+  mode: 'project' | 'about';
+  project?: number;
+  side: 'left' | 'right';
+  accent?: string;
+}
+const { mode, project, side, accent } = Astro.props;
+---
+
+<main transition:name="content" transition:animate={stageSwap} data-mode={mode} data-project={project} class:list={['content', side]} style={accent ? `--accent:${accent}` : undefined}>
+  <div class="shade" aria-hidden="true"></div>
+  <div class="col" data-stage-avoid={side}>
+    <slot />
+  </div>
+</main>
+
+<style>
+  .content {
+    position: relative;
+    z-index: 20;
+    min-height: 100svh;
+  }
+  .shade {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+  }
+  .right .shade {
+    background: linear-gradient(to right, transparent 30%, rgba(6, 8, 11, 0.78) 58%, rgba(6, 8, 11, 0.92));
+  }
+  .left .shade {
+    background: linear-gradient(to left, transparent 30%, rgba(6, 8, 11, 0.78) 58%, rgba(6, 8, 11, 0.92));
+  }
+  .col {
+    position: relative;
+    width: min(620px, 46vw);
+    padding: clamp(150px, 22vh, 220px) 0 140px;
+  }
+  .right .col {
+    margin-left: auto;
+    margin-right: clamp(40px, 7vw, 120px);
+  }
+  .left .col {
+    margin-left: calc(var(--side-w) + var(--side-gap) + clamp(40px, 5vw, 96px));
+  }
+
+  /* typography shared by content pages */
+  .col :global(.eyebrow) {
+    margin-bottom: 20px;
+  }
+  .col :global(h1) {
+    font-weight: 200;
+    font-size: clamp(48px, 6vw, 104px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    margin-bottom: 22px;
+  }
+  .col :global(.lede) {
+    font-size: clamp(18px, 1.6vw, 22px);
+    font-weight: 300;
+    line-height: 1.5;
+    color: #d6dbe4;
+    margin-bottom: 28px;
+  }
+  .col :global(h2) {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 64px 0 18px;
+  }
+  .col :global(h2::before) {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+  }
+  .col :global(p) {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #c4cad5;
+  }
+  .col :global(p + p) {
+    margin-top: 1em;
+  }
+  .col :global(ul.list) {
+    list-style: none;
+    counter-reset: item;
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .col :global(ul.list li) {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+    line-height: 1.6;
+    color: #c4cad5;
+  }
+  .col :global(ul.list li) {
+    counter-increment: item;
+  }
+  .col :global(ul.list li::before) {
+    content: counter(item, decimal-leading-zero);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--faint);
+    padding-top: 4px;
+  }
+  .col :global(.back) {
+    margin-bottom: 40px;
+  }
+
+  /* entrance stagger */
+  .col > :global(*) {
+    animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .col > :global(*:nth-child(2)) { animation-delay: 0.08s; }
+  .col > :global(*:nth-child(3)) { animation-delay: 0.16s; }
+  .col > :global(*:nth-child(4)) { animation-delay: 0.24s; }
+  .col > :global(*:nth-child(n + 5)) { animation-delay: 0.32s; }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+      filter: blur(6px);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .shade,
+    .right .shade,
+    .left .shade {
+      /* keep the top ~40% clear so the logo reads, then darken under the text */
+      background: linear-gradient(to bottom, transparent 0%, transparent 36%, rgba(6, 8, 11, 0.85) 50%, rgba(6, 8, 11, 0.95));
+    }
+    .col,
+    .right .col,
+    .left .col {
+      width: auto;
+      margin: 0;
+      padding: 46svh 24px 120px;
+      /* text sits on a solid backing so the exhibit never shows through it */
+      background: linear-gradient(to bottom, transparent calc(46svh - 140px), rgba(6, 8, 11, 0.96) calc(46svh + 10px));
+    }
+  }
+</style>
