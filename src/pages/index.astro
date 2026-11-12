@@ -4,7 +4,7 @@ import { profile, projects } from '../data/site';
 import { stageSwap } from '../scripts/transitions';
 
 const first = projects[0];
-const data = projects.map(({ slug, name, tagline, role, status, accent }) => ({ slug, name, tagline, role, status, accent }));
+const data = projects.map(({ slug, name, tagline, role, period, status, accent }) => ({ slug, name, tagline, role, period, status, accent }));
 const pad = (n: number) => String(n).padStart(2, '0');
 ---
 
@@ -29,6 +29,7 @@ const pad = (n: number) => String(n).padStart(2, '0');
       <div class="chips">
         <span class="chip" data-field="role">{first.role}</span>
         <span class="chip chip-status" data-field="status" data-status={first.status}>{first.status}</span>
+        <span class="chip" data-field="period">{first.period}</span>
       </div>
       <h2 class="title"><span data-field="name">{first.name}</span></h2>
       <p class="tagline" data-field="tagline">{first.tagline}</p>
@@ -47,7 +48,7 @@ const pad = (n: number) => String(n).padStart(2, '0');
 <script>
   import type { Stage } from '../scripts/stage/stage';
 
-  type P = { slug: string; name: string; tagline: string; role: string; status: string; accent: string };
+  type P = { slug: string; name: string; tagline: string; role: string; period: string; status: string; accent: string };
 
   let cleanup: (() => void) | null = null;
 
@@ -82,6 +83,7 @@ const pad = (n: number) => String(n).padStart(2, '0');
         field('role').textContent = p.role;
         field('status').textContent = p.status;
         field('status').dataset.status = p.status;
+        field('period').textContent = p.period;
         (field('link') as HTMLAnchorElement).href = `/work/${p.slug}`;
         meta.classList.remove('out');
       };

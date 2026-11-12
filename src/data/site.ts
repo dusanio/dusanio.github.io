@@ -1,9 +1,7 @@
 /**
- * All site copy lives here.
- *
- * DRAFT CONTENT: project write-ups were drafted from each company's public website (Nov 2026).
- * Figures marked "self-reported" are the company's own marketing numbers. Review every line
- * before publishing — especially role descriptions, which describe the role, not personal results.
+ * All site copy lives here. Roles and dates follow the CV (public/cv).
+ * Company descriptions come from each company's public website; figures marked
+ * "self-reported" are the company's own marketing numbers.
  */
 
 export interface Project {
@@ -13,7 +11,10 @@ export interface Project {
   shortName?: string;
   /** Short line under the title on the stage. */
   tagline: string;
+  /** Short role label for chips (home stage, About timeline). */
   role: string;
+  /** Overall time with the company, e.g. "Aug 2026 – Present". */
+  period: string;
   status: 'Now' | 'Previously';
   tags: string[];
   url: string;
@@ -23,21 +24,27 @@ export interface Project {
   /** Accent (brand colour) used for particles, highlights and the case-study page. */
   accent: string;
   overview: string;
-  role_detail: string;
+  /** Positions held at the company, newest first (from the CV). */
+  positions: { title: string; period: string; items: string[] }[];
   facts: { label: string; value: string; note?: string }[];
   sections: { heading: string; body?: string; items?: string[] }[];
 }
 
 export const profile = {
-  name: 'Dusan Trajkovic',
-  title: 'AI-Assisted Engineer & BD',
+  name: 'Dushan Trajkovic',
+  title: 'AI-Assisted Engineer · Technical Customer Success & Business Development',
+  /** Two short lines for the sidebar, where the full title doesn't fit. */
+  titleShort: ['AI-Assisted Engineer', 'Customer Success & BD'],
   headline: 'Engineering with AI, and the customers and deals around it.',
   /** Shown as tags on the About page. */
-  roles: ['AI-assisted engineer', 'Support & customer success', 'BD & sales', 'Founder'],
+  roles: ['AI-assisted engineer', 'Technical customer success', 'Business development', 'Founder, Telebux'],
   email: 'trajkodulic@gmail.com',
+  /** CV served from public/cv. Replace the file (same name) to update it. */
+  cv: { href: '/cv/Dushan_Trajkovic_CV.pdf', fileName: 'Dushan_Trajkovic_CV.pdf', updated: 'Nov 2026' },
   telegram: { handle: '@dusanio', url: 'https://t.me/dusanio' },
   // Shown in the HUD clock. Confirm city and time zone.
   location: { label: 'Based in Belgrade', timeZone: 'Europe/Belgrade' },
+  community: [{ name: 'Superteam Balkan', role: 'Member' }],
   socials: [
     { label: 'GitHub', href: 'https://github.com/dusanio' },
     { label: 'LinkedIn', href: 'https://linkedin.com/in/dusanio' },
@@ -52,6 +59,7 @@ export const projects: Project[] = [
     name: 'Telebux',
     tagline: 'The agentic sales layer for teams that sell through messengers.',
     role: 'Founder',
+    period: 'Aug 2026 – Present',
     status: 'Now',
     tags: ['Founder', 'CRM', 'AI'],
     url: 'https://telebux.xyz',
@@ -60,8 +68,18 @@ export const projects: Project[] = [
     accent: '#3ad6a6',
     overview:
       'Telebux is a CRM and business workspace for people and teams who sell through Telegram, Slack and email. Instead of a bot, it connects your own accounts, so deals that start in a chat never have to be copied into a CRM by hand.',
-    role_detail:
-      'I founded Telebux and build it end to end: product direction, the interface, and getting it in front of the founders, BD teams, agencies and web3 teams it is made for.',
+    positions: [
+      {
+        title: 'Founder',
+        period: 'Aug 2026 – Present',
+        items: [
+          'Building Telebux, a sales layer for web3 teams that run leads through Telegram, Slack and email, with a CRM built in rather than a CRM alone.',
+          'Shipping product end to end.',
+          'Running outbound and customer discovery directly, and sharing progress publicly through daily build-in-public updates on X.',
+          'Supported by Superteam Balkan; featured in a SaaS Browser case study.',
+        ],
+      },
+    ],
     facts: [
       { label: 'Channels', value: 'Telegram · Slack · Email' },
       { label: 'AI', value: 'Claude, bring-your-own-key' },
@@ -97,17 +115,36 @@ export const projects: Project[] = [
     slug: 'streamflow',
     name: 'Streamflow',
     tagline: 'Token vesting, locks, airdrops and payouts on Solana.',
-    role: 'BD, Sales & Customer Success',
+    role: 'BD & Customer Success · Web Developer',
+    period: 'Mar 2022 – Aug 2026',
     status: 'Previously',
-    tags: ['BD & Sales', 'Web3', 'Solana'],
+    tags: ['BD & Customer Success', 'Web Development', 'Solana'],
     url: 'https://streamflow.finance',
     urlLabel: 'streamflow.finance',
     logo: 'streamflow.png',
     accent: '#5b7bff',
     overview:
       'Streamflow is a token distribution platform on Solana. It automates vesting, token locks, airdrops, staking and payouts through on-chain contracts, with no-code tools for teams and an SDK for developers.',
-    role_detail:
-      'I worked in business development and sales until August 2026, bringing Solana teams onto Streamflow for their vesting, airdrop and distribution needs.',
+    positions: [
+      {
+        title: 'Business Development / Customer Success',
+        period: 'Mar 2025 – Aug 2026',
+        items: [
+          'Managed customer success and business development for Web3 clients, including sales calls, partnership discussions and customer onboarding.',
+          'Led product demos, technical support and onboarding calls to help clients successfully adopt Streamflow products.',
+          'Provided customer and technical support: helped users navigate the platform, resolved their issues, and escalated bugs to the engineering team for fixes.',
+          'Worked closely with Product and Engineering to translate customer feedback into platform improvements and feature enhancements.',
+        ],
+      },
+      {
+        title: 'Intern / Junior Web Developer',
+        period: 'Mar 2022 – Sep 2023',
+        items: [
+          'Coded the design for ~30 landing pages in the Astro framework and boosted the company’s SEO ranking.',
+          'Took part in design discussions for landing pages.',
+        ],
+      },
+    ],
     facts: [
       { label: 'TVL', value: '$365M+', note: 'self-reported' },
       { label: 'Users', value: '1.3M+', note: 'self-reported' },
@@ -143,17 +180,23 @@ export const projects: Project[] = [
     name: 'MultiChain Advisors',
     shortName: 'MCA',
     tagline: 'Growth, CFO and M&A advisory for emerging tech.',
-    role: 'UI Developer',
+    role: 'Junior Web Developer (Freelance)',
+    period: 'Aug 2022 – Dec 2023',
     status: 'Previously',
-    tags: ['UI Development', 'Advisory', 'Web3'],
+    tags: ['Web Development', 'Freelance', 'Advisory'],
     url: 'https://mca.digital',
     urlLabel: 'mca.digital',
     logo: 'mca.png',
     accent: '#4fcbe6',
     overview:
       'MultiChain Advisors (MCA) advises emerging technology companies on growth, financial strategy, AI transformation and capital markets.',
-    role_detail:
-      'I worked as a UI developer, building the interfaces and web presence behind the firm’s advisory work.',
+    positions: [
+      {
+        title: 'Junior Web Developer (Freelance)',
+        period: 'Aug 2022 – Dec 2023',
+        items: ['Built landing pages for the company.'],
+      },
+    ],
     facts: [
       { label: 'Focus', value: 'Growth · CFO · M&A' },
       { label: 'Clients', value: 'Emerging tech' },
@@ -170,8 +213,8 @@ export const projects: Project[] = [
 
 export const about = {
   intro: [
-    'I’m an AI-assisted engineer working across technical support, customer success, business development and sales. I build software with AI in the loop, backed by 4+ years of shipping web applications with React, Astro and Tailwind CSS.',
-    'Right now I’m building Telebux, a CRM for teams that sell through messengers. Until August 2026 I worked in business development and sales at Streamflow, and before that as a UI developer at MultiChain Advisors.',
+    'I’m an AI-assisted engineer working across technical customer success and business development. I build software with AI in the loop, on a frontend background in React, Astro and Tailwind CSS.',
+    'Since August 2026 I’ve been building Telebux, a sales layer for web3 teams with a CRM built in, supported by Superteam Balkan. At Streamflow Finance I started as an intern and junior web developer (2022–2023), then came back to run customer success and business development for Web3 clients (2025–2026). Alongside my first stint, I built landing pages for MultiChain Advisors as a freelancer.',
     'Working across the product, the customer and the deal means I build for the people who use it, support them once they do, and can talk to the people who buy it.',
   ],
   disciplines: [
