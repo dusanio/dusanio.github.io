@@ -39,11 +39,19 @@ import { about, profile, projects } from '../data/site';
             <span class="status"><span class="chip chip-status" data-status={p.status}>{p.status}</span></span>
             <span class="name">{p.name}</span>
             <span class="role">{p.role}</span>
+            <span class="when">{p.period}</span>
             <span class="arrow" aria-hidden="true">→</span>
           </a>
         </li>
       ))}
     </ol>
+
+    <h2>Community</h2>
+    <ul class="community">
+      {profile.community.map((c) => (
+        <li><span class="name">{c.name}</span><span class="when">{c.role}</span></li>
+      ))}
+    </ul>
 
     <h2>Toolkit</h2>
     <ul class="toolkit chips">
@@ -55,6 +63,12 @@ import { about, profile, projects } from '../data/site';
       Available for select projects. Reach out at
       <a href={`mailto:${profile.email}`}>{profile.email}</a> or
       <a href={profile.telegram.url} target="_blank" rel="noopener noreferrer">{profile.telegram.handle}</a> on Telegram.
+    </p>
+    <p class="cv-row">
+      <a class="btn btn-primary" href="/cv">
+        View CV
+        <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span>
+      </a>
     </p>
     <ul class="socials">
       {profile.socials.map((s) => (
@@ -110,7 +124,7 @@ import { about, profile, projects } from '../data/site';
   .timeline a {
     display: grid;
     grid-template-columns: 130px 1fr auto;
-    grid-template-areas: 'status name arrow' 'status role arrow';
+    grid-template-areas: 'status name arrow' 'status role arrow' 'status when arrow';
     padding: 18px 0;
     border-bottom: 1px solid var(--line);
     transition: padding 0.3s;
@@ -136,6 +150,33 @@ import { about, profile, projects } from '../data/site';
     color: var(--dim);
     font-size: 14px;
   }
+  .timeline .when {
+    grid-area: when;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--faint);
+    margin-top: 4px;
+    font-feature-settings: 'tnum';
+  }
+  .community {
+    list-style: none;
+    border-top: 1px solid var(--hair);
+  }
+  .community li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--hair);
+  }
+  .community .name {
+    font-size: 20px;
+    font-weight: 300;
+  }
+  .community .when {
+    font-size: 13px;
+    color: var(--dim);
+  }
   .timeline .arrow {
     grid-area: arrow;
     align-self: center;
@@ -155,6 +196,9 @@ import { about, profile, projects } from '../data/site';
   .contact a:hover {
     border-color: var(--ink);
   }
+  .cv-row {
+    margin-top: 24px;
+  }
   .socials {
     list-style: none;
     display: flex;
@@ -171,7 +215,7 @@ import { about, profile, projects } from '../data/site';
   @media (max-width: 900px) {
     .timeline a {
       grid-template-columns: 1fr auto;
-      grid-template-areas: 'status arrow' 'name arrow' 'role arrow';
+      grid-template-areas: 'status arrow' 'name arrow' 'role arrow' 'when arrow';
     }
   }
 </style>

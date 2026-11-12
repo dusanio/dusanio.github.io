@@ -13,6 +13,7 @@ interface Props {
 const { title, description = `${profile.name}: ${profile.title}. ${profile.headline}` } = Astro.props;
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 const onAbout = path.startsWith('/about');
+const onCv = path.startsWith('/cv');
 const projectIndex = projects.findIndex((p) => path === `/work/${p.slug}`);
 const stageProjects = projects.map(({ slug, logo, accent }) => ({ slug, logo, accent }));
 const pad = (n: number) => String(n).padStart(2, '0');
@@ -48,13 +49,13 @@ const arrowUpRight = 'M5 11L11 5M6 5h5v5';
         <img src="/dusanio_pfp.png" alt="" width="40" height="40" />
         <span class="brand-text">
           <span class="brand-name">{profile.name}</span>
-          <span class="brand-role">{profile.title}</span>
+          <span class="brand-role">{profile.titleShort.map((line) => <span>{line}</span>)}</span>
         </span>
       </a>
 
       <nav aria-label="Primary" class="side-nav">
         <span class="side-indicator" aria-hidden="true"></span>
-        <a href="/" class="side-link" data-nav="work" aria-current={!onAbout ? 'page' : undefined}>Work</a>
+        <a href="/" class="side-link" data-nav="work" aria-current={!onAbout && !onCv ? 'page' : undefined}>Work</a>
         <ol class="side-projects">
           {projects.map((p, i) => (
             <li>
@@ -66,6 +67,7 @@ const arrowUpRight = 'M5 11L11 5M6 5h5v5';
           ))}
         </ol>
         <a href="/about" class="side-link" data-nav="about" aria-current={onAbout ? 'page' : undefined}>About</a>
+        <a href="/cv" class="side-link" data-nav="cv" aria-current={onCv ? 'page' : undefined}>CV</a>
       </nav>
 
       <div class="side-foot">
@@ -187,17 +189,17 @@ const arrowUpRight = 'M5 11L11 5M6 5h5v5';
       window.__nav = {
         mode: 'home',
         project: 0,
-        set(mode, project) {
+        set(mode, project, section = mode === 'about' ? 'about' : 'work') {
           this.mode = mode;
           this.project = project;
           root.dataset.mode = mode;
           root.style.setProperty('--accent', mode === 'about' ? '#dfe6ff' : window.__site.stageProjects[project]?.accent ?? '#dfe6ff');
           topLinks.forEach((a) => {
-            const on = (a.dataset.nav === 'about') === (mode === 'about');
+            const on = a.dataset.nav === section;
             on ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current');
           });
           projectLinks.forEach((a, i) => {
-            const on = mode !== 'about' && i === project;
+            const on = section === 'work' && mode !== 'about' && i === project;
             on ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current');
           });
           placeIndicator();
@@ -224,9 +226,10 @@ const arrowUpRight = 'M5 11L11 5M6 5h5v5';
           return 0;
         }
       };
+      const sectionFor = (path: string) => (path.startsWith('/cv') ? 'cv' : path.startsWith('/about') ? 'about' : 'work');
       const modeFor = (path: string): [StageMode, number] => {
         const p = path.replace(/\/$/, '') || '/';
-        if (p.startsWith('/about')) return ['about', window.__nav.project];
+        if (p.startsWith('/about') || p.startsWith('/cv')) return ['about', window.__nav.project];
         const slug = p.match(/^\/work\/([^/]+)/)?.[1];
         const i = window.__site.stageProjects.findIndex((x) => x.slug === slug);
         if (i >= 0) return ['project', i];
@@ -235,8 +238,9 @@ const arrowUpRight = 'M5 11L11 5M6 5h5v5';
 
       // Start the camera move (and the highlight) as soon as navigation begins.
       document.addEventListener('astro:before-preparation', async (e: any) => {
-        const [mode, i] = modeFor(new URL(e.to).pathname);
-        window.__nav.set(mode, i);
+        const to = new URL(e.to).pathname;
+        const [mode, i] = modeFor(to);
+        window.__nav.set(mode, i, sectionFor(to));
         (await window.__stage)?.setMode(mode, i);
       });
 
@@ -249,7 +253,7 @@ const arrowUpRight = 'M5 11L11 5M6 5h5v5';
         }
         // home manages its own project state; other pages are fixed
         if (mode !== 'home') {
-          window.__nav.set(mode, i);
+          window.__nav.set(mode, i, sectionFor(location.pathname));
           (await window.__stage)?.setMode(mode, i);
         }
       });
@@ -566,6 +570,7 @@ const arrowUpRight = 'M5 11L11 5M6 5h5v5';
     color: #fff;
   }
   .brand-role {
+    display: grid;
     font-size: 12.5px;
     color: #c2c9d4;
   }
@@ -744,7 +749,7 @@ const arrowUpRight = 'M5 11L11 5M6 5h5v5';
       display: inline;
     }
   }
-  @media (max-width: 360px) {
+  @media (max-width: 440px) {
     .brand-name {
       display: none;
     }

@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContentShell from '../components/ContentShell.astro';
+import { profile } from '../data/site';
+
+const { href, fileName, updated } = profile.cv;
+---
+
+<Layout title={`CV | ${profile.name}`} description={`${profile.name}'s CV: experience, skills and education.`}>
+  <ContentShell mode="about" side="left" accent="#dfe6ff">
+    <div class="chips eyebrow">
+      <span class="chip">PDF · 1 page</span>
+      <span class="chip">Updated {updated}</span>
+    </div>
+
+    <h1>CV</h1>
+    <p class="lede">Experience, skills and education on one page.</p>
+
+    <div class="actions">
+      <!-- Served as application/pdf: browsers open it in their own viewer, nothing is downloaded. -->
+      <a class="btn btn-primary" href={href} target="_blank" rel="noopener">
+        Open in new tab
+        <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 11L11 5M6 5h5v5" /></svg></span>
+      </a>
+      <a class="btn" href={href} download={fileName}>
+        Download PDF
+        <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 3v8M4.5 7.5L8 11l3.5-3.5M3 13h10" /></svg></span>
+      </a>
+    </div>
+
+    <figure class="viewer">
+      <iframe src={`${href}#view=FitH&toolbar=0&navpanes=0`} title={`${profile.name} CV (PDF)`} loading="lazy"></iframe>
+      <figcaption>
+        Can’t see the preview? <a href={href} target="_blank" rel="noopener">Open the PDF</a>.
+      </figcaption>
+    </figure>
+  </ContentShell>
+</Layout>
+
+<style>
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+  .viewer {
+    position: relative;
+    border: 1px solid var(--hair);
+    background: var(--surface);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    padding: 10px;
+  }
+  /* A4 portrait, so the single page shows whole */
+  .viewer iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 210 / 297;
+    border: 0;
+    background: #f5f0e6;
+  }
+  .viewer figcaption {
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--dim);
+  }
+  .viewer figcaption a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 4px;
+  }
+</style>

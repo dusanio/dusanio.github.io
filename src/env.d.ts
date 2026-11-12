@@ -6,7 +6,7 @@ interface Window {
   __stage?: Promise<import('./scripts/stage/stage').Stage | null>;
   /** Shared nav state: pages call set() when the current mode/project changes. */
   __nav: {
-    set(mode: import('./scripts/stage/stage').StageMode, project: number): void;
+    set(mode: import('./scripts/stage/stage').StageMode, project: number, section?: 'work' | 'about' | 'cv'): void;
     mode: import('./scripts/stage/stage').StageMode;
     project: number;
   };
