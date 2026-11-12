@@ -1,238 +1,328 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-import Footer from '../components/Footer.astro';
+import { profile, projects } from '../data/site';
+import { stageSwap } from '../scripts/transitions';
 
-const projects = [
-  {
-    name: 'Telebux',
-    description: 'A CRM built for businesses that operate on Telegram.',
-    position: 'Founder',
-    url: 'https://telebux.xyz',
-    label: 'Business, Management',
-  },
-  {
-    name: 'Streamflow Finance',
-    description: '#1 token vesting platform on Solana',
-    position: 'Business Development & Sales',
-    url: 'https://streamflow.finance',
-    label: 'Web3, Solana',
-  },
-  {
-    name: 'MultiChain Advisors',
-    description: 'Web3 strategy and growth agency',
-    position: 'ex UI Developer',
-    url: 'https://multichainadv.com',
-    label: 'Web3, Solana',
-  },
-];
-
-const socialLinks = [
-  { href: 'https://github.com/dusanio', label: 'GitHub' },
-  { href: 'https://linkedin.com/in/dusanio', label: 'LinkedIn' },
-  { href: 'https://x.com/thedusanio', label: 'X' },
-  { href: 'https://t.me/dusanio', label: 'Telegram' },
-];
+const first = projects[0];
+const data = projects.map(({ slug, name, tagline, role, status, accent }) => ({ slug, name, tagline, role, status, accent }));
+const pad = (n: number) => String(n).padStart(2, '0');
 ---
 
-<Layout title="Dusan Trajkovic | Portfolio">
-  <Header />
+<Layout title={`${profile.name} | ${profile.title}`}>
+  <main data-mode="home" class="home" transition:name="content" transition:animate={stageSwap} style={`--accent:${first.accent}`}>
+    <h1 class="sr-only">{profile.name}, {profile.title}. {profile.headline}</h1>
 
-  <main class="max-w-3xl mx-auto px-6 pt-24">
-    <section class="py-20 animate-fade-in" aria-labelledby="intro-heading">
-      <div class="flex items-center gap-6 mb-6">
-        <img
-          src="/dusanio_pfp.png"
-          alt="Dusan Trajkovic"
-          class="w-20 h-20 bg-white rounded-full object-cover border-2 border-[#2a2a2a]"
-        />
-        <div>
-          <p class="text-xl text-white font-medium">
-            Dusan Trajkovic
-          </p>
-          <p class="text-[#888888]">
-            Frontend Engineer
-          </p>
-        </div>
-      </div>
-
-      <h1 id="intro-heading" class="text-3xl sm:text-4xl font-normal leading-tight mb-4 tracking-tight">
-        Frontend engineer crafting calm, resilient web experiences.
-      </h1>
-      <p class="text-lg text-[#888888] max-w-lg leading-relaxed">
-        I build polished React and Astro interfaces with attention to accessibility and performance.
-      </p>
-
-      <div class="flex flex-wrap gap-3 mt-4 text-xs">
-        {socialLinks.map((link) => (
-          <a
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="rounded-full border border-[#2a2a2a] bg-[#141414] px-4 py-2 text-[#888888] transition-colors hover:text-white"
-          >
-            {link.label}
-          </a>
+    <nav class="index" aria-label="Projects">
+      <ol>
+        {projects.map((p, i) => (
+          <li>
+            <a href={`/work/${p.slug}`} data-index={i} aria-label={p.name} aria-current={i === 0 ? 'true' : undefined} style={`--c:${p.accent}`}>
+              <span class="num" aria-hidden="true">{pad(i + 1)}</span>
+              <span class="long">{p.name}</span><span class="short">{p.shortName ?? p.name}</span>
+            </a>
+          </li>
         ))}
+      </ol>
+    </nav>
+
+    <section class="meta" data-stage-avoid="right" aria-live="polite" aria-atomic="true">
+      <div class="chips">
+        <span class="chip" data-field="role">{first.role}</span>
+        <span class="chip chip-status" data-field="status" data-status={first.status}>{first.status}</span>
       </div>
+      <h2 class="title"><span data-field="name">{first.name}</span></h2>
+      <p class="tagline" data-field="tagline">{first.tagline}</p>
+      <a class="btn btn-ghost" data-field="link" href={`/work/${first.slug}`}>
+        View case study
+        <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span>
+      </a>
     </section>
 
-    <section id="about" class="section py-12">
-      <h2 class="text-xs font-medium uppercase tracking-wider text-[#888888] mb-6">About</h2>
-      <p class="text-lg text-[#cccccc] leading-relaxed mb-8">
-        I'm a frontend engineer with 4+ years of experience shipping web applications.
-        I work with React, Astro, and Tailwind CSS to build interfaces that feel effortless.
-        Currently working at <a href="https://streamflow.finance" target="_blank" rel="noopener noreferrer" class="text-white hover:underline underline-offset-3">Streamflow</a>, and building <a href="https://telebux.xyz" target="_blank" rel="noopener noreferrer" class="text-white hover:underline underline-offset-3">Telebux</a>.
-        Previously at <a href="https://multichainadv.com" target="_blank" rel="noopener noreferrer" class="text-white hover:underline underline-offset-3">MultiChain Advisors</a>.
-      </p>
-    </section>
+    <p class="hint">Scroll, swipe or use the arrow keys</p>
 
-    <section id="projects" class="section py-12">
-      <h2 class="text-xs font-medium uppercase tracking-wider text-[#888888] mb-6">Experience</h2>
-
-      <div class="relative mb-4">
-        <input
-          type="text"
-          id="search-input"
-          aria-label="Search experience"
-          placeholder="Search experience..."
-          class="w-full rounded-lg border border-[#2a2a2a] bg-[#141414] px-4 py-3 pr-12 text-white placeholder-[#888888] transition-all focus:border-[#444444] focus:bg-[#1a1a1a] focus:outline-none"
-        />
-        <svg
-          class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#888888]"
-          aria-hidden="true"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-          />
-        </svg>
-      </div>
-
-      <div id="projects-grid" class="flex flex-col gap-3">
-        {projects.map((project, index) => (
-          <div
-            class="project-item"
-            data-search={`${project.name} ${project.description} ${project.position} ${project.label}`.toLowerCase()}
-          >
-            <ProjectCard
-              name={project.name}
-              description={project.description}
-              position={project.position}
-              label={project.label}
-              url={project.url}
-              delay={index * 50}
-            />
-          </div>
-        ))}
-      </div>
-
-      <div id="no-results" class="hidden text-center py-8 text-[#888888]">
-        No projects found
-      </div>
-    </section>
-
-    <section id="contact" class="section py-12">
-      <h2 class="text-xs font-medium uppercase tracking-wider text-[#888888] mb-6">Contact</h2>
-      <p class="text-lg text-[#cccccc] leading-relaxed mb-6">
-        Available for select projects &mdash; reach out at
-        <a href="mailto:trajkodulic@gmail.com" class="text-white hover:underline underline-offset-3">trajkodulic@gmail.com</a>
-        or <a href="https://t.me/dusanio" target="_blank" rel="noopener noreferrer" class="text-white hover:underline underline-offset-3">@dusanio</a> on Telegram.
-      </p>
-    </section>
+    <script type="application/json" id="projects-data" set:html={JSON.stringify(data)} />
   </main>
-
-  <Footer />
 </Layout>
 
 <script>
-  const searchInput = document.querySelector<HTMLInputElement>('#search-input');
-  const projectItems = Array.from(document.querySelectorAll<HTMLElement>('.project-item'));
-  const noResults = document.getElementById('no-results');
+  import type { Stage } from '../scripts/stage/stage';
 
-  if (searchInput && noResults) {
-    searchInput.addEventListener('input', () => {
-      const query = searchInput.value.trim().toLowerCase();
-      let visibleCount = 0;
+  type P = { slug: string; name: string; tagline: string; role: string; status: string; accent: string };
 
-      for (const item of projectItems) {
-        const matchesQuery = item.dataset.search?.includes(query) ?? false;
-        item.hidden = !matchesQuery;
+  let cleanup: (() => void) | null = null;
 
-        if (matchesQuery) {
-          visibleCount++;
+  function init() {
+    const main = document.querySelector<HTMLElement>('main.home');
+    if (!main) return;
+    const projects: P[] = JSON.parse(document.getElementById('projects-data')!.textContent!);
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const meta = main.querySelector<HTMLElement>('.meta')!;
+    const field = (k: string) => main.querySelector<HTMLElement>(`[data-field="${k}"]`)!;
+    const indexLinks = Array.from(main.querySelectorAll<HTMLAnchorElement>('.index a'));
+    const ac = new AbortController();
+    const on = (t: EventTarget, type: string, fn: (e: any) => void, opts: AddEventListenerOptions = {}) =>
+      t.addEventListener(type, fn, { ...opts, signal: ac.signal });
+
+    let stage: Stage | null = null;
+    let current = 0;
+    try {
+      current = Math.min(projects.length - 1, Number(sessionStorage.getItem('project') ?? 0) || 0);
+    } catch {}
+
+    let swapTimer = 0;
+    function render(i: number, animate: boolean) {
+      const p = projects[i];
+      main!.style.setProperty('--accent', p.accent);
+      document.documentElement.style.setProperty('--accent', p.accent);
+      indexLinks.forEach((a, j) => (j === i ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current')));
+      window.__nav?.set('home', i);
+      const apply = () => {
+        field('name').textContent = p.name;
+        field('tagline').textContent = p.tagline;
+        field('role').textContent = p.role;
+        field('status').textContent = p.status;
+        field('status').dataset.status = p.status;
+        (field('link') as HTMLAnchorElement).href = `/work/${p.slug}`;
+        meta.classList.remove('out');
+      };
+      clearTimeout(swapTimer);
+      if (animate && !reducedMotion) {
+        meta.classList.add('out');
+        swapTimer = window.setTimeout(apply, 450);
+      } else apply();
+    }
+
+    let lockUntil = 0;
+    function go(i: number) {
+      const n = projects.length;
+      const next = ((i % n) + n) % n;
+      if (next === current) return;
+      current = next;
+      try {
+        sessionStorage.setItem('project', String(current));
+      } catch {}
+      lockUntil = performance.now() + 1200;
+      render(current, true);
+      stage?.setMode('home', current);
+    }
+
+    render(current, false);
+    window.__stage?.then((s) => {
+      stage = s;
+      s?.setMode('home', current);
+    });
+
+    // browse: wheel, keys, swipe, index (mobile switcher), sidebar project links
+    on(document, 'project:select', (e: CustomEvent<number>) => go(e.detail));
+    let wheelAcc = 0;
+    on(
+      window,
+      'wheel',
+      (e: WheelEvent) => {
+        if (performance.now() < lockUntil) return;
+        wheelAcc += e.deltaY + e.deltaX;
+        if (Math.abs(wheelAcc) > 60) {
+          go(current + Math.sign(wheelAcc));
+          wheelAcc = 0;
         }
+      },
+      { passive: true },
+    );
+    on(window, 'keydown', (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown') {
+        e.preventDefault();
+        go(current + 1);
       }
-
-      noResults.classList.toggle('hidden', visibleCount > 0);
-    });
-  }
-
-  const sections = document.querySelectorAll<HTMLElement>('.section');
-
-  if ('IntersectionObserver' in window) {
-    const sectionObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') {
+        e.preventDefault();
+        go(current - 1);
       }
     });
-    }, { threshold: 0.1 });
+    let touchX = 0;
+    let touchY = 0;
+    on(
+      window,
+      'touchstart',
+      (e: TouchEvent) => {
+        touchX = e.touches[0].clientX;
+        touchY = e.touches[0].clientY;
+      },
+      { passive: true },
+    );
+    on(
+      window,
+      'touchend',
+      (e: TouchEvent) => {
+        const dx = e.changedTouches[0].clientX - touchX;
+        const dy = e.changedTouches[0].clientY - touchY;
+        const d = Math.abs(dx) > Math.abs(dy) ? -dx : -dy;
+        if (Math.abs(d) > 50) go(current + Math.sign(d));
+      },
+      { passive: true },
+    );
+    indexLinks.forEach((a, i) =>
+      on(a, 'click', (e: MouseEvent) => {
+        if (i === current) return; // clicking the active item opens its case study
+        e.preventDefault();
+        go(i);
+      }),
+    );
 
-    sections.forEach((section) => sectionObserver.observe(section));
-  } else {
-    sections.forEach((section) => section.classList.add('visible'));
+    cleanup = () => {
+      ac.abort();
+      clearTimeout(swapTimer);
+    };
   }
+
+  document.addEventListener('astro:page-load', init);
+  document.addEventListener('astro:before-swap', () => {
+    cleanup?.();
+    cleanup = null;
+  });
 </script>
 
 <style>
-  .section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+  .home {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .home > * {
+    pointer-events: auto;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
 
-  .section.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .project-item[hidden] {
+  /* in-page project switcher: only on small screens (desktop uses the sidebar) */
+  .index {
     display: none;
   }
 
-  .animate-fade-in {
-    animation: fadeInUp 0.8s ease-out;
+  .meta {
+    position: absolute;
+    /* right of the exhibit, which is centred in the area beside the rail */
+    right: clamp(40px, 6vw, 110px);
+    top: 26%;
+    width: min(28vw, 420px);
+    transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+  }
+  /* feathered dark scrim behind the title block: keeps text legible over bright scenery */
+  .meta::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: -90px -110px -90px -120px;
+    pointer-events: none;
+    background: radial-gradient(closest-side, rgba(6, 8, 11, 0.78), rgba(6, 8, 11, 0.5) 55%, transparent);
+  }
+  .meta .tagline {
+    color: #c7ced9;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.9);
+  }
+  .meta.out {
+    opacity: 0;
+    transform: translateY(-10px);
+    filter: blur(6px);
+  }
+  .meta .chips {
+    margin-bottom: 18px;
+  }
+  .title {
+    font-weight: 200;
+    font-size: clamp(40px, 4.2vw, 80px);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    margin-bottom: 18px;
+    text-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+  }
+  .tagline {
+    color: var(--dim);
+    font-size: 16px;
+    line-height: 1.55;
+    margin-bottom: 26px;
+    max-width: 34ch;
   }
 
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .hint {
+    position: absolute;
+    left: var(--stage-center, 50%);
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-size: 13px;
+    color: #c2c9d4;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.95);
+    white-space: nowrap;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .section {
-      opacity: 1;
-      transform: none;
-      transition: none;
+  @media (max-width: 900px) {
+    .hint {
+      display: none;
     }
-
-    .animate-fade-in {
-      animation: none;
+    .home::before {
+      content: '';
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 52%;
+      background: linear-gradient(to top, rgba(6, 8, 11, 0.95) 35%, rgba(6, 8, 11, 0.6) 70%, transparent);
+      pointer-events: none;
+    }
+    .meta {
+      left: 24px;
+      right: 24px;
+      width: auto;
+      top: auto;
+      bottom: 128px;
+      max-width: none;
+    }
+    .title {
+      font-size: clamp(42px, 13vw, 64px);
+    }
+    /* the index becomes text tabs with the same sliding-underline language as the bar */
+    .index {
+      display: block;
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 70px;
+      z-index: 1;
+    }
+    .index ol {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .index a {
+      display: block;
+      padding: 8px 0;
+      font-size: 14px;
+      color: #b3bbc8;
+      border-bottom: 2px solid transparent;
+      transition: color 0.3s, border-color 0.4s;
+    }
+    .index a[aria-current] {
+      color: #fff;
+      border-bottom-color: var(--accent);
+    }
+    .index .num {
+      display: none;
+    }
+    .index a:focus:not(:focus-visible) {
+      outline: none;
+    }
+    .long {
+      display: none;
+    }
+    .short {
+      display: inline;
     }
   }
 </style>
-
